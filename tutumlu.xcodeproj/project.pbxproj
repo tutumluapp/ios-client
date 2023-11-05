@@ -54,14 +54,54 @@
 		228317042B3366030079333F /* tutumlu */ = {
 			isa = PBXGroup;
 			children = (
-				228317052B3366030079333F /* AppDelegate.swift */,
-				228317072B3366030079333F /* SceneDelegate.swift */,
-				228317092B3366030079333F /* ViewController.swift */,
-				2283170E2B3366040079333F /* Assets.xcassets */,
-				228317102B3366040079333F /* LaunchScreen.storyboard */,
+				2283171F2B336B4E0079333F /* Other */,
+				2283171E2B336B480079333F /* Controllers */,
+				2283171D2B336B3D0079333F /* Models */,
+				2283171B2B336B2C0079333F /* ViewModels */,
+				228317192B336B170079333F /* Views */,
 				228317132B3366040079333F /* Info.plist */,
 			);
 			path = tutumlu;
+			sourceTree = "<group>";
+		};
+		228317192B336B170079333F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2283171B2B336B2C0079333F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		2283171D2B336B3D0079333F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2283171E2B336B480079333F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				228317092B3366030079333F /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2283171F2B336B4E0079333F /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				228317052B3366030079333F /* AppDelegate.swift */,
+				228317102B3366040079333F /* LaunchScreen.storyboard */,
+				2283170E2B3366040079333F /* Assets.xcassets */,
+				228317072B3366030079333F /* SceneDelegate.swift */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
