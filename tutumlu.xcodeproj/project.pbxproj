@@ -9,19 +9,21 @@
 /* Begin PBXBuildFile section */
 		228317062B3366030079333F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228317052B3366030079333F /* AppDelegate.swift */; };
 		228317082B3366030079333F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228317072B3366030079333F /* SceneDelegate.swift */; };
-		2283170A2B3366030079333F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228317092B3366030079333F /* ViewController.swift */; };
+		2283170A2B3366030079333F /* LoginSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228317092B3366030079333F /* LoginSignupViewController.swift */; };
 		2283170F2B3366040079333F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2283170E2B3366040079333F /* Assets.xcassets */; };
 		228317122B3366040079333F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 228317102B3366040079333F /* LaunchScreen.storyboard */; };
+		228317212B343CAC0079333F /* LoginSignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228317202B343CAC0079333F /* LoginSignupView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		228317022B3366030079333F /* tutumlu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tutumlu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		228317052B3366030079333F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		228317072B3366030079333F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		228317092B3366030079333F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		228317092B3366030079333F /* LoginSignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignupViewController.swift; sourceTree = "<group>"; };
 		2283170E2B3366040079333F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		228317112B3366040079333F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		228317132B3366040079333F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		228317202B343CAC0079333F /* LoginSignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignupView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 		228317192B336B170079333F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				228317202B343CAC0079333F /* LoginSignupView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -88,7 +91,7 @@
 		2283171E2B336B480079333F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				228317092B3366030079333F /* ViewController.swift */,
+				228317092B3366030079333F /* LoginSignupViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -174,8 +177,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2283170A2B3366030079333F /* ViewController.swift in Sources */,
+				2283170A2B3366030079333F /* LoginSignupViewController.swift in Sources */,
 				228317062B3366030079333F /* AppDelegate.swift in Sources */,
+				228317212B343CAC0079333F /* LoginSignupView.swift in Sources */,
 				228317082B3366030079333F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
