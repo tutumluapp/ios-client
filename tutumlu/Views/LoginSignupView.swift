@@ -29,18 +29,18 @@ class LoginSignupView: UIView {
         
         titleLabel.text = "TUTUMLU"
         titleLabel.font = UIFont(descriptor: UIFontDescriptor.preferredFontDescriptor(withTextStyle: .largeTitle).withSymbolicTraits([.traitBold, .traitItalic])!, size: 64)
-        titleLabel.textColor = .green
+        titleLabel.textColor = UIColor(hexString: "3EBD69")
         titleLabel.textAlignment = .center
         
         // Configure buttons
-        loginButton.backgroundColor = .green
+        loginButton.backgroundColor = UIColor(hexString: "3EBD69")
         loginButton.setTitleColor(.white, for: .normal)
         loginButton.layer.cornerRadius = 10
         loginButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         loginButton.setTitle("Login", for: .normal)
         
         
-        signupButton.backgroundColor = .green
+        signupButton.backgroundColor = UIColor(hexString: "3EBD69")
         signupButton.setTitleColor(.white, for: .normal)
         signupButton.layer.cornerRadius = 10
         signupButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)

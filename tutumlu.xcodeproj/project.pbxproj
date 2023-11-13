@@ -13,6 +13,7 @@
 		2283170F2B3366040079333F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2283170E2B3366040079333F /* Assets.xcassets */; };
 		228317122B3366040079333F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 228317102B3366040079333F /* LaunchScreen.storyboard */; };
 		228317212B343CAC0079333F /* LoginSignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228317202B343CAC0079333F /* LoginSignupView.swift */; };
+		228317242B343EF00079333F /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228317232B343EF00079333F /* UIColorExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		228317112B3366040079333F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		228317132B3366040079333F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		228317202B343CAC0079333F /* LoginSignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignupView.swift; sourceTree = "<group>"; };
+		228317232B343EF00079333F /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		228317042B3366030079333F /* tutumlu */ = {
 			isa = PBXGroup;
 			children = (
+				228317222B343EDD0079333F /* Extensions */,
 				2283171F2B336B4E0079333F /* Other */,
 				2283171E2B336B480079333F /* Controllers */,
 				2283171D2B336B3D0079333F /* Models */,
@@ -105,6 +108,14 @@
 				228317072B3366030079333F /* SceneDelegate.swift */,
 			);
 			path = Other;
+			sourceTree = "<group>";
+		};
+		228317222B343EDD0079333F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				228317232B343EF00079333F /* UIColorExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +192,7 @@
 				228317062B3366030079333F /* AppDelegate.swift in Sources */,
 				228317212B343CAC0079333F /* LoginSignupView.swift in Sources */,
 				228317082B3366030079333F /* SceneDelegate.swift in Sources */,
+				228317242B343EF00079333F /* UIColorExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
