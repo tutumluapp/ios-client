@@ -11,8 +11,8 @@ class LoginSignupView: UIView {
     
     let titleLabel = TitleLabel()
     let stackView = UIStackView()
-    let loginButton = UIButton()
-    let signupButton = UIButton()
+    let loginButton = RoundedGreenButton()
+    let signupButton = RoundedGreenButton()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,17 +28,7 @@ class LoginSignupView: UIView {
         backgroundColor = .white
         
         // Configure buttons
-        loginButton.backgroundColor = UIColor(hexString: "3EBD69")
-        loginButton.setTitleColor(.white, for: .normal)
-        loginButton.layer.cornerRadius = 10
-        loginButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         loginButton.setTitle("Login", for: .normal)
-        
-        
-        signupButton.backgroundColor = UIColor(hexString: "3EBD69")
-        signupButton.setTitleColor(.white, for: .normal)
-        signupButton.layer.cornerRadius = 10
-        signupButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         signupButton.setTitle("Sign Up", for: .normal)
         
         // Configure stack view
@@ -53,8 +43,7 @@ class LoginSignupView: UIView {
         // Add subviews
         addSubview(titleLabel)
         addSubview(stackView)
-
-        }
+    }
     
     private func setupConstraints() {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
