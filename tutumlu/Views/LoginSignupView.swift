@@ -9,7 +9,7 @@ import UIKit
 
 class LoginSignupView: UIView {
     
-    let titleLabel = UILabel()
+    let titleLabel = TitleLabel()
     let stackView = UIStackView()
     let loginButton = UIButton()
     let signupButton = UIButton()
@@ -26,11 +26,6 @@ class LoginSignupView: UIView {
     
     private func setupView() {
         backgroundColor = .white
-        
-        titleLabel.text = "TUTUMLU"
-        titleLabel.font = UIFont(descriptor: UIFontDescriptor.preferredFontDescriptor(withTextStyle: .largeTitle).withSymbolicTraits([.traitBold, .traitItalic])!, size: 64)
-        titleLabel.textColor = UIColor(hexString: "3EBD69")
-        titleLabel.textAlignment = .center
         
         // Configure buttons
         loginButton.backgroundColor = UIColor(hexString: "3EBD69")

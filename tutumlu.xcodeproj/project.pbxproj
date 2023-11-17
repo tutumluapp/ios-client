@@ -14,6 +14,7 @@
 		228317122B3366040079333F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 228317102B3366040079333F /* LaunchScreen.storyboard */; };
 		228317212B343CAC0079333F /* LoginSignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228317202B343CAC0079333F /* LoginSignupView.swift */; };
 		228317242B343EF00079333F /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228317232B343EF00079333F /* UIColorExtensions.swift */; };
+		228317272B3440170079333F /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228317262B3440170079333F /* TitleLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		228317132B3366040079333F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		228317202B343CAC0079333F /* LoginSignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignupView.swift; sourceTree = "<group>"; };
 		228317232B343EF00079333F /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		228317262B3440170079333F /* TitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				228317202B343CAC0079333F /* LoginSignupView.swift */,
+				228317252B343FF30079333F /* CustomComponents */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -116,6 +119,14 @@
 				228317232B343EF00079333F /* UIColorExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		228317252B343FF30079333F /* CustomComponents */ = {
+			isa = PBXGroup;
+			children = (
+				228317262B3440170079333F /* TitleLabel.swift */,
+			);
+			path = CustomComponents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,6 +202,7 @@
 				2283170A2B3366030079333F /* LoginSignupViewController.swift in Sources */,
 				228317062B3366030079333F /* AppDelegate.swift in Sources */,
 				228317212B343CAC0079333F /* LoginSignupView.swift in Sources */,
+				228317272B3440170079333F /* TitleLabel.swift in Sources */,
 				228317082B3366030079333F /* SceneDelegate.swift in Sources */,
 				228317242B343EF00079333F /* UIColorExtensions.swift in Sources */,
 			);
