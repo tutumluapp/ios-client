@@ -39,7 +39,8 @@ class LoginSignupViewController: UIViewController {
 
     
     @objc private func signupButtonTapped() {
-
+        let signupVC = SignupViewController()
+        self.present(signupVC, animated: true, completion: nil)
     }
     
 }
