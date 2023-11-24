@@ -8,21 +8,48 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
     var window: UIWindow?
-
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
+
+        let initialViewController: UIViewController
+        let navigationController: UINavigationController
+
+        // Initial page (will be modified when authentication is added)
+        initialViewController = LoginSignupViewController()
+
+        // Embed the initial view controller in a navigation controller
+        navigationController = UINavigationController(rootViewController: initialViewController)
+
+        // Customize the navigation bar appearance
+        let navigationBarAppearance = UINavigationBarAppearance()
+        navigationBarAppearance.configureWithOpaqueBackground()
+        navigationBarAppearance.backgroundColor = UIColor(hexString: "3EBD69")
+        navigationBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navigationBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
         
-        let vc = LoginSignupViewController()
+        // Set up a global appearance for back button items to remove the text
+        let backButtonAppearance = UIBarButtonItemAppearance(style: .plain)
+        backButtonAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor.clear] // Make title text clear (or set the font size to 0)
+        
+        navigationBarAppearance.backButtonAppearance = backButtonAppearance
+
+        // Apply the appearance to the navigation controller's navigation bar
+        navigationController.navigationBar.standardAppearance = navigationBarAppearance
+        navigationController.navigationBar.scrollEdgeAppearance = navigationBarAppearance
+        navigationController.navigationBar.compactAppearance = navigationBarAppearance // For iPhone small navigation bar in landscape.
+        navigationController.navigationBar.tintColor = .white
+        
+
+        // Create the window and set the navigation controller as the root
         let window = UIWindow(windowScene: windowScene)
-        
-        window.rootViewController = vc
-        window.makeKeyAndVisible()
-        
+        window.rootViewController = navigationController
         self.window = window
+        window.makeKeyAndVisible()
     }
+
+
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

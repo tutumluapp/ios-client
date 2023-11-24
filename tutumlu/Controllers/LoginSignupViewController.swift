@@ -18,11 +18,20 @@ class LoginSignupViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Additional setup after loading the view
         setupBindings()
+        setupNavigationBar()
     }
     
+    
+    private func setupNavigationBar() {
+        // Set the title of the navigation bar
+        navigationItem.title = "Login or Sign up"
+        
+        // Optionally add a profile button to the right
+        let profileImage = UIImage(named: "profileIcon")?.withRenderingMode(.alwaysOriginal) // Replace "profileIcon" with your image name
+        let profileButton = UIBarButtonItem(image: profileImage, style: .plain, target: self, action: #selector(profileButtonTapped))
+        navigationItem.rightBarButtonItem = profileButton
+    }
     
     private func setupBindings() {
         // Here you can setup bindings between your ViewModel and the LoginSignupView
@@ -37,10 +46,14 @@ class LoginSignupViewController: UIViewController {
 
     }
 
-    
     @objc private func signupButtonTapped() {
+
         let signupVC = SignupViewController()
-        self.present(signupVC, animated: true, completion: nil)
+        navigationController?.pushViewController(signupVC, animated: true)
     }
     
+    @objc private func profileButtonTapped() {
+
+    }
+
 }
