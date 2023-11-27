@@ -34,8 +34,6 @@ class LoginSignupViewController: UIViewController {
     }
     
     private func setupBindings() {
-        // Here you can setup bindings between your ViewModel and the LoginSignupView
-        // For example:
         loginSignupView.loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         loginSignupView.signupButton.addTarget(self, action: #selector(signupButtonTapped), for: .touchUpInside)
     }
@@ -43,11 +41,11 @@ class LoginSignupViewController: UIViewController {
     // MARK: - Actions
     
     @objc private func loginButtonTapped() {
-
+        let loginVC = LoginViewController()
+        navigationController?.pushViewController(loginVC, animated: true)
     }
 
     @objc private func signupButtonTapped() {
-
         let signupVC = SignupViewController()
         navigationController?.pushViewController(signupVC, animated: true)
     }

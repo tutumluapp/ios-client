@@ -18,6 +18,8 @@
 		228317292B3440FF0079333F /* RoundedGreenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228317282B3440FF0079333F /* RoundedGreenButton.swift */; };
 		2283172B2B3442080079333F /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2283172A2B3442080079333F /* SignupView.swift */; };
 		2283172D2B3442380079333F /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2283172C2B3442380079333F /* SignupViewController.swift */; };
+		2283172F2B346D950079333F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2283172E2B346D950079333F /* LoginViewController.swift */; };
+		228317312B346DB10079333F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228317302B346DB10079333F /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		228317282B3440FF0079333F /* RoundedGreenButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedGreenButton.swift; sourceTree = "<group>"; };
 		2283172A2B3442080079333F /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		2283172C2B3442380079333F /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		2283172E2B346D950079333F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		228317302B346DB10079333F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				228317202B343CAC0079333F /* LoginSignupView.swift */,
+				228317302B346DB10079333F /* LoginView.swift */,
 				2283172A2B3442080079333F /* SignupView.swift */,
 				228317252B343FF30079333F /* CustomComponents */,
 			);
@@ -106,6 +111,7 @@
 			children = (
 				228317092B3366030079333F /* LoginSignupViewController.swift */,
 				2283172C2B3442380079333F /* SignupViewController.swift */,
+				2283172E2B346D950079333F /* LoginViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -216,6 +222,8 @@
 				2283172B2B3442080079333F /* SignupView.swift in Sources */,
 				228317082B3366030079333F /* SceneDelegate.swift in Sources */,
 				228317242B343EF00079333F /* UIColorExtensions.swift in Sources */,
+				228317312B346DB10079333F /* LoginView.swift in Sources */,
+				2283172F2B346D950079333F /* LoginViewController.swift in Sources */,
 				228317292B3440FF0079333F /* RoundedGreenButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
