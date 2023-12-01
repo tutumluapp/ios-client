@@ -43,7 +43,8 @@ class LoginViewController: UIViewController {
     }
     
     @objc private func loginButtonTapped() {
-
+        let homeVC = HomeViewController()
+        navigationController?.setViewControllers([homeVC], animated: true)
     }
 
     @objc private func backButtonTapped() {

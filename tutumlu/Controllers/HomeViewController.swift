@@ -1,34 +1,37 @@
 //
-//  SignupViewController.swift
+//  HomeViewController.swift
 //  tutumlu
 //
-//  Created by ali-kerem on 20.11.2023.
+//  Created by ali-kerem on 1.12.2023.
 //
 
 import UIKit
 
-class SignupViewController: UIViewController {
+class HomeViewController: UIViewController {
     
-    private var signupView: SignupView!
+    private var homeView: HomeView!
 
     override func loadView() {
-        signupView = SignupView()
-        view = signupView
+        homeView = HomeView()
+        view = homeView
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Additional setup after loading the view
         setupBindings()
         setupNavigationBar()
     }
     
     private func setupBindings() {
-        signupView.signupButton.addTarget(self, action: #selector(signupButtonTapped), for: .touchUpInside)
+        // Here you can setup bindings between your ViewModel and the HomeView
+        // For example:
+        // homeView.searchButton.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)
     }
     
     private func setupNavigationBar() {
         // Set the title of the navigation bar
-        navigationItem.title = "Sign up"
+        navigationItem.title = "Home"
         
         // Optionally add a profile button to the right
         let profileImage = UIImage(named: "profileIcon")?.withRenderingMode(.alwaysOriginal) // Replace "profileIcon" with your image name
@@ -36,16 +39,22 @@ class SignupViewController: UIViewController {
         navigationItem.rightBarButtonItem = profileButton
     }
     
-    @objc private func signupButtonTapped() {
-        let homeVC = HomeViewController()
-        navigationController?.setViewControllers([homeVC], animated: true)
+    // MARK: - Actions
+    
+    @objc private func searchButtonTapped() {
+        // Handle search button tap
+    }
+    
+    @objc private func uploadButtonTapped() {
+        // Handle upload button tap
     }
     
     @objc private func backButtonTapped() {
+        // Code to handle the back button tap
         navigationController?.popViewController(animated: true)
     }
 
     @objc private func profileButtonTapped() {
-
+        // Code to handle the profile button tap
     }
 }

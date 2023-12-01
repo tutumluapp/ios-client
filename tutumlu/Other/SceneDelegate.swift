@@ -16,8 +16,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let initialViewController: UIViewController
         let navigationController: UINavigationController
 
-        // Initial page (will be modified when authentication is added)
-        initialViewController = LoginSignupViewController()
+        if UserDefaults.standard.bool(forKey: "isUserLoggedIn") {
+            // User is logged in, show home page
+            initialViewController = HomeViewController()
+        } else {
+            // User not logged in, show login/signup page
+            initialViewController = LoginSignupViewController()
+        }
 
         // Embed the initial view controller in a navigation controller
         navigationController = UINavigationController(rootViewController: initialViewController)
