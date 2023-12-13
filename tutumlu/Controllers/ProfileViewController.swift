@@ -24,7 +24,7 @@ class ProfileViewController: UIViewController {
     }
     
     private func setupBindings() {
-
+        profileView.changeProfileNameButton.addTarget(self, action: #selector(changeProfileNameButtonTapped), for: .touchUpInside)
     }
     
     private func setupNavigationBar() {
@@ -45,4 +45,10 @@ class ProfileViewController: UIViewController {
     @objc private func logoutButtonTapped() {
         // Code to handle the profile button tap
     }
+    
+    @objc private func changeProfileNameButtonTapped() {
+        let changeProfileNameVC = ChangeProfileNameViewController()
+        navigationController?.pushViewController(changeProfileNameVC, animated: true)
+    }
+
 }

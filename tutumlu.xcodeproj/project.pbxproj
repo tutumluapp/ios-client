@@ -25,6 +25,8 @@
 		22B26C1E2B3C24DB00195585 /* ProfileButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C1D2B3C24DB00195585 /* ProfileButtonExtension.swift */; };
 		22B26C202B3C282C00195585 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C1F2B3C282C00195585 /* ProfileViewController.swift */; };
 		22B26C222B3C283F00195585 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C212B3C283F00195585 /* ProfileView.swift */; };
+		22B26C242B3C386500195585 /* ChangeProfileNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C232B3C386500195585 /* ChangeProfileNameViewController.swift */; };
+		22B26C262B3C387900195585 /* ChangeProfileNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C252B3C387900195585 /* ChangeProfileNameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		22B26C1D2B3C24DB00195585 /* ProfileButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileButtonExtension.swift; sourceTree = "<group>"; };
 		22B26C1F2B3C282C00195585 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		22B26C212B3C283F00195585 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		22B26C232B3C386500195585 /* ChangeProfileNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileNameViewController.swift; sourceTree = "<group>"; };
+		22B26C252B3C387900195585 /* ChangeProfileNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileNameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,7 @@
 				228317202B343CAC0079333F /* LoginSignupView.swift */,
 				22B26C212B3C283F00195585 /* ProfileView.swift */,
 				228317302B346DB10079333F /* LoginView.swift */,
+				22B26C252B3C387900195585 /* ChangeProfileNameView.swift */,
 				228317342B346F310079333F /* HomeView.swift */,
 				2283172A2B3442080079333F /* SignupView.swift */,
 				228317252B343FF30079333F /* CustomComponents */,
@@ -125,6 +130,7 @@
 				2283172C2B3442380079333F /* SignupViewController.swift */,
 				2283172E2B346D950079333F /* LoginViewController.swift */,
 				22B26C1F2B3C282C00195585 /* ProfileViewController.swift */,
+				22B26C232B3C386500195585 /* ChangeProfileNameViewController.swift */,
 				228317322B346F1B0079333F /* HomeViewController.swift */,
 			);
 			path = Controllers;
@@ -238,10 +244,12 @@
 				2283172B2B3442080079333F /* SignupView.swift in Sources */,
 				228317082B3366030079333F /* SceneDelegate.swift in Sources */,
 				22B26C222B3C283F00195585 /* ProfileView.swift in Sources */,
+				22B26C262B3C387900195585 /* ChangeProfileNameView.swift in Sources */,
 				228317242B343EF00079333F /* UIColorExtensions.swift in Sources */,
 				228317312B346DB10079333F /* LoginView.swift in Sources */,
 				2283172F2B346D950079333F /* LoginViewController.swift in Sources */,
 				228317292B3440FF0079333F /* RoundedGreenButton.swift in Sources */,
+				22B26C242B3C386500195585 /* ChangeProfileNameViewController.swift in Sources */,
 				22B26C202B3C282C00195585 /* ProfileViewController.swift in Sources */,
 				228317332B346F1B0079333F /* HomeViewController.swift in Sources */,
 				22B26C1E2B3C24DB00195585 /* ProfileButtonExtension.swift in Sources */,
