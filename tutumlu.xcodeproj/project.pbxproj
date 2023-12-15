@@ -27,6 +27,7 @@
 		22B26C222B3C283F00195585 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C212B3C283F00195585 /* ProfileView.swift */; };
 		22B26C242B3C386500195585 /* ChangeProfileNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C232B3C386500195585 /* ChangeProfileNameViewController.swift */; };
 		22B26C262B3C387900195585 /* ChangeProfileNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C252B3C387900195585 /* ChangeProfileNameView.swift */; };
+		22B26C2C2B3C3FA700195585 /* ProfileLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C2B2B3C3FA700195585 /* ProfileLabelView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		22B26C212B3C283F00195585 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		22B26C232B3C386500195585 /* ChangeProfileNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileNameViewController.swift; sourceTree = "<group>"; };
 		22B26C252B3C387900195585 /* ChangeProfileNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileNameView.swift; sourceTree = "<group>"; };
+		22B26C2B2B3C3FA700195585 /* ProfileLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileLabelView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 			children = (
 				228317262B3440170079333F /* TitleLabel.swift */,
 				228317282B3440FF0079333F /* RoundedGreenButton.swift */,
+				22B26C2B2B3C3FA700195585 /* ProfileLabelView.swift */,
 			);
 			path = CustomComponents;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				2283170A2B3366030079333F /* LoginSignupViewController.swift in Sources */,
 				228317352B346F310079333F /* HomeView.swift in Sources */,
 				228317062B3366030079333F /* AppDelegate.swift in Sources */,
+				22B26C2C2B3C3FA700195585 /* ProfileLabelView.swift in Sources */,
 				228317212B343CAC0079333F /* LoginSignupView.swift in Sources */,
 				228317272B3440170079333F /* TitleLabel.swift in Sources */,
 				2283172B2B3442080079333F /* SignupView.swift in Sources */,
