@@ -28,6 +28,8 @@
 		22B26C242B3C386500195585 /* ChangeProfileNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C232B3C386500195585 /* ChangeProfileNameViewController.swift */; };
 		22B26C262B3C387900195585 /* ChangeProfileNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C252B3C387900195585 /* ChangeProfileNameView.swift */; };
 		22B26C2C2B3C3FA700195585 /* ProfileLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C2B2B3C3FA700195585 /* ProfileLabelView.swift */; };
+		22B26C2E2B3C475200195585 /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C2D2B3C475200195585 /* ChangePasswordView.swift */; };
+		22B26C302B3C476200195585 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C2F2B3C476200195585 /* ChangePasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,8 @@
 		22B26C232B3C386500195585 /* ChangeProfileNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileNameViewController.swift; sourceTree = "<group>"; };
 		22B26C252B3C387900195585 /* ChangeProfileNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileNameView.swift; sourceTree = "<group>"; };
 		22B26C2B2B3C3FA700195585 /* ProfileLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileLabelView.swift; sourceTree = "<group>"; };
+		22B26C2D2B3C475200195585 /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
+		22B26C2F2B3C476200195585 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,7 @@
 				228317302B346DB10079333F /* LoginView.swift */,
 				22B26C252B3C387900195585 /* ChangeProfileNameView.swift */,
 				228317342B346F310079333F /* HomeView.swift */,
+				22B26C2D2B3C475200195585 /* ChangePasswordView.swift */,
 				2283172A2B3442080079333F /* SignupView.swift */,
 				228317252B343FF30079333F /* CustomComponents */,
 			);
@@ -133,6 +138,7 @@
 				2283172E2B346D950079333F /* LoginViewController.swift */,
 				22B26C1F2B3C282C00195585 /* ProfileViewController.swift */,
 				22B26C232B3C386500195585 /* ChangeProfileNameViewController.swift */,
+				22B26C2F2B3C476200195585 /* ChangePasswordViewController.swift */,
 				228317322B346F1B0079333F /* HomeViewController.swift */,
 			);
 			path = Controllers;
@@ -244,7 +250,9 @@
 				228317062B3366030079333F /* AppDelegate.swift in Sources */,
 				22B26C2C2B3C3FA700195585 /* ProfileLabelView.swift in Sources */,
 				228317212B343CAC0079333F /* LoginSignupView.swift in Sources */,
+				22B26C302B3C476200195585 /* ChangePasswordViewController.swift in Sources */,
 				228317272B3440170079333F /* TitleLabel.swift in Sources */,
+				22B26C2E2B3C475200195585 /* ChangePasswordView.swift in Sources */,
 				2283172B2B3442080079333F /* SignupView.swift in Sources */,
 				228317082B3366030079333F /* SceneDelegate.swift in Sources */,
 				22B26C222B3C283F00195585 /* ProfileView.swift in Sources */,

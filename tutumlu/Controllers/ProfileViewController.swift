@@ -25,6 +25,7 @@ class ProfileViewController: UIViewController {
     
     private func setupBindings() {
         profileView.changeProfileNameButton.addTarget(self, action: #selector(changeProfileNameButtonTapped), for: .touchUpInside)
+        profileView.changePasswordButton.addTarget(self, action: #selector(changePasswordButtonTapped), for: .touchUpInside)
     }
     
     private func setupNavigationBar() {
@@ -49,6 +50,11 @@ class ProfileViewController: UIViewController {
     @objc private func changeProfileNameButtonTapped() {
         let changeProfileNameVC = ChangeProfileNameViewController()
         navigationController?.pushViewController(changeProfileNameVC, animated: true)
+    }
+    
+    @objc private func changePasswordButtonTapped() {
+        let changePasswordVC = ChangePasswordViewController()
+        navigationController?.pushViewController(changePasswordVC, animated: true)
     }
 
 }
