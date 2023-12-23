@@ -26,11 +26,6 @@ class LoginSignupViewController: UIViewController {
     private func setupNavigationBar() {
         // Set the title of the navigation bar
         navigationItem.title = "Login or Sign up"
-        
-        // Optionally add a profile button to the right
-        let profileImage = UIImage(named: "profileIcon")?.withRenderingMode(.alwaysOriginal) // Replace "profileIcon" with your image name
-        let profileButton = UIBarButtonItem(image: profileImage, style: .plain, target: self, action: #selector(profileButtonTapped))
-        navigationItem.rightBarButtonItem = profileButton
     }
     
     private func setupBindings() {
