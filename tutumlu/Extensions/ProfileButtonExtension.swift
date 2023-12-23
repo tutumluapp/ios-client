@@ -11,8 +11,9 @@ import UIKit
 
 extension UIViewController {
     func addProfileButton(target: Any?, action: Selector?) {
-        let profileImage = UIImage(systemName: "person")?.withRenderingMode(.alwaysOriginal)
+        let profileImage = UIImage(systemName: "person")?.withRenderingMode(.alwaysTemplate)
         let profileButton = UIBarButtonItem(image: profileImage, style: .plain, target: target, action: action)
+        profileButton.tintColor = .white
         navigationItem.rightBarButtonItem = profileButton
     }
 }

@@ -31,8 +31,9 @@ class ProfileViewController: UIViewController {
     private func setupNavigationBar() {
         navigationItem.title = "Profile"
         
-        let logoutImage = UIImage(systemName: "rectangle.portrait.and.arrow.forward")?.withRenderingMode(.alwaysOriginal)
+        let logoutImage = UIImage(systemName: "rectangle.portrait.and.arrow.forward")?.withRenderingMode(.alwaysTemplate)
         let logoutButton = UIBarButtonItem(image: logoutImage, style: .plain, target: self, action: #selector(logoutButtonTapped))
+        logoutButton.tintColor = .white
         navigationItem.rightBarButtonItem = logoutButton
     }
     
