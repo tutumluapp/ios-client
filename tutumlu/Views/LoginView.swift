@@ -71,6 +71,7 @@ class LoginView: UIView {
             usernameTextField.heightAnchor.constraint(equalToConstant: 50),
             passwordTextField.heightAnchor.constraint(equalToConstant: 50),
             
+            // Login button constraints
             loginButton.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 50),
             loginButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             loginButton.heightAnchor.constraint(equalToConstant: 50),

@@ -27,7 +27,6 @@ class SignupViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
-        // Set the title of the navigation bar
         navigationItem.title = "Sign up"
     }
     
@@ -38,9 +37,5 @@ class SignupViewController: UIViewController {
     
     @objc private func backButtonTapped() {
         navigationController?.popViewController(animated: true)
-    }
-
-    @objc private func profileButtonTapped() {
-
     }
 }

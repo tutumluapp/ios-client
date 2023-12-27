@@ -58,7 +58,7 @@ class SignupView: UIView {
         stackView.addArrangedSubview(repeatPasswordTextField)
         
         // Configure and add the signup button
-        signupButton.setTitle("Login", for: .normal)
+        signupButton.setTitle("Sign Up", for: .normal)
 
         // Add subviews
         addSubview(titleLabel)
@@ -85,6 +85,7 @@ class SignupView: UIView {
             usernameTextField.heightAnchor.constraint(equalToConstant: 50),
             passwordTextField.heightAnchor.constraint(equalToConstant: 50),
             
+            // Signup button constraints
             signupButton.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 50),
             signupButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             signupButton.heightAnchor.constraint(equalToConstant: 50),

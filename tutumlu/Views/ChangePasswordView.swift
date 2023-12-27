@@ -52,7 +52,7 @@ class ChangePasswordView: UIView {
         stackView.addArrangedSubview(newPasswordTextField)
         stackView.addArrangedSubview(repeatNewPasswordTextField)
 
-        // Configure and add the login button
+        // Configure and add the save button
         saveButton.setTitle("Save", for: .normal)
 
         // Add subviews
@@ -73,6 +73,7 @@ class ChangePasswordView: UIView {
             newPasswordTextField.heightAnchor.constraint(equalToConstant: 50),
             repeatNewPasswordTextField.heightAnchor.constraint(equalToConstant: 50),
             
+            // Save button constraints
             saveButton.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 50),
             saveButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             saveButton.heightAnchor.constraint(equalToConstant: 50),

@@ -33,7 +33,7 @@ class ChangeProfileNameView: UIView {
         profileNameTextField.placeholder = "Enter new profile name..."
         profileNameTextField.borderStyle = .roundedRect
 
-        // Configure and add the save button
+        // Configure save button
         saveButton.setTitle("Save", for: .normal)
 
         // Add subviews
@@ -48,16 +48,19 @@ class ChangeProfileNameView: UIView {
         saveButton.translatesAutoresizingMaskIntoConstraints = false
                 
         NSLayoutConstraint.activate([
+            // Profile label constraints
             profileLabelView.centerXAnchor.constraint(equalTo: centerXAnchor),
             profileLabelView.topAnchor.constraint(equalTo: topAnchor, constant: 200),
             profileLabelView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.8),
             profileLabelView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.15),
             
+            // Profile name text field constraints
             profileNameTextField.centerXAnchor.constraint(equalTo: centerXAnchor),
             profileNameTextField.topAnchor.constraint(equalTo: profileLabelView.bottomAnchor, constant: 120),
             profileNameTextField.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.8),
             profileNameTextField.heightAnchor.constraint(equalToConstant: 50),
             
+            // Save button constraints
             saveButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -150),
             saveButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             saveButton.heightAnchor.constraint(equalToConstant: 50),

@@ -14,7 +14,6 @@ class ChangePasswordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Initialize your custom view and add it as a subview
         changePasswordView = ChangePasswordView()
         view.addSubview(changePasswordView)
         
@@ -22,16 +21,12 @@ class ChangePasswordViewController: UIViewController {
         changePasswordView.frame = view.bounds // If not using Auto Layout
         changePasswordView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // If not using Auto Layout
 
-        // Set up the rest of your view controller's view hierarchy and properties
         setupNavigationBar()
-        
         setupBindings()
     }
     
     private func setupNavigationBar() {
-        // Set the title of the navigation bar
         navigationItem.title = "Change Password"
-        
     }
     
     private func setupBindings() {
@@ -40,7 +35,6 @@ class ChangePasswordViewController: UIViewController {
     
 
     @objc private func backButtonTapped() {
-        // Code to handle the back button tap
         navigationController?.popViewController(animated: true)
     }
 

@@ -37,7 +37,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Set up a global appearance for back button items to remove the text
         let backButtonAppearance = UIBarButtonItemAppearance(style: .plain)
         backButtonAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor.clear] // Make title text clear (or set the font size to 0)
-        
         navigationBarAppearance.backButtonAppearance = backButtonAppearance
 
         // Apply the appearance to the navigation controller's navigation bar
@@ -46,7 +45,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         navigationController.navigationBar.compactAppearance = navigationBarAppearance // For iPhone small navigation bar in landscape.
         navigationController.navigationBar.tintColor = .white
         
-
         // Create the window and set the navigation controller as the root
         let window = UIWindow(windowScene: windowScene)
         window.rootViewController = navigationController

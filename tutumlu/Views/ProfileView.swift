@@ -55,13 +55,14 @@ class ProfileView: UIView {
         profileLabelView.translatesAutoresizingMaskIntoConstraints = false
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
-        // Add constraints for profileView - Adjust the constants as needed
         NSLayoutConstraint.activate([
+            // Profile label constraints
             profileLabelView.centerXAnchor.constraint(equalTo: centerXAnchor),
             profileLabelView.bottomAnchor.constraint(equalTo: stackView.topAnchor, constant: -150),
             profileLabelView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.8),
             profileLabelView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.15),
             
+            // Stack view constraints
             stackView.centerXAnchor.constraint(equalTo: centerXAnchor),
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -250),
             stackView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.8),

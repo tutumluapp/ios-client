@@ -22,14 +22,11 @@ class LoginViewController: UIViewController {
         loginView.frame = view.bounds // If not using Auto Layout
         loginView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // If not using Auto Layout
 
-        // Set up the rest of your view controller's view hierarchy and properties
         setupNavigationBar()
-        
         setupBindings()
     }
     
     private func setupNavigationBar() {
-        // Set the title of the navigation bar
         navigationItem.title = "Login"
     }
     
@@ -43,11 +40,6 @@ class LoginViewController: UIViewController {
     }
 
     @objc private func backButtonTapped() {
-        // Code to handle the back button tap
         navigationController?.popViewController(animated: true)
-    }
-
-    @objc private func profileButtonTapped() {
-        // Code to handle the profile button tap
     }
 }

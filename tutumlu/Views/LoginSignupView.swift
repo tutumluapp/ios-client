@@ -48,10 +48,10 @@ class LoginSignupView: UIView {
     private func setupConstraints() {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         stackView.translatesAutoresizingMaskIntoConstraints = false
-                
+        
         NSLayoutConstraint.activate([
             // Title label constraints
-            titleLabel.bottomAnchor.constraint(equalTo: stackView.topAnchor, constant: -50), // Adjust the constant as needed
+            titleLabel.bottomAnchor.constraint(equalTo: stackView.topAnchor, constant: -50),
             titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             
             // Stack view constraints

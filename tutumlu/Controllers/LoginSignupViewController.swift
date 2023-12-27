@@ -24,7 +24,6 @@ class LoginSignupViewController: UIViewController {
     
     
     private func setupNavigationBar() {
-        // Set the title of the navigation bar
         navigationItem.title = "Login or Sign up"
     }
     
@@ -44,9 +43,4 @@ class LoginSignupViewController: UIViewController {
         let signupVC = SignupViewController()
         navigationController?.pushViewController(signupVC, animated: true)
     }
-    
-    @objc private func profileButtonTapped() {
-
-    }
-
 }

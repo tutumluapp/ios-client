@@ -18,15 +18,13 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Additional setup after loading the view
+
         setupBindings()
         setupNavigationBar()
     }
     
     private func setupBindings() {
-        // Here you can setup bindings between your ViewModel and the HomeView
-        // For example:
-        // homeView.searchButton.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)
+
     }
     
     private func setupNavigationBar() {
@@ -46,7 +44,6 @@ class HomeViewController: UIViewController {
     }
     
     @objc private func backButtonTapped() {
-        // Code to handle the back button tap
         navigationController?.popViewController(animated: true)
     }
 

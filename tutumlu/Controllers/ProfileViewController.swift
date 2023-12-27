@@ -18,7 +18,7 @@ class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Additional setup after loading the view
+
         setupBindings()
         setupNavigationBar()
     }
@@ -40,7 +40,6 @@ class ProfileViewController: UIViewController {
     // MARK: - Actions
 
     @objc private func backButtonTapped() {
-        // Code to handle the back button tap
         navigationController?.popViewController(animated: true)
     }
 
