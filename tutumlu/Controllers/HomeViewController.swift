@@ -24,7 +24,7 @@ class HomeViewController: UIViewController {
     }
     
     private func setupBindings() {
-
+        homeView.searchButton.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)
     }
     
     private func setupNavigationBar() {
@@ -36,7 +36,8 @@ class HomeViewController: UIViewController {
     // MARK: - Actions
     
     @objc private func searchButtonTapped() {
-        // Handle search button tap
+        let searchVC = SearchTabViewController()
+        navigationController?.pushViewController(searchVC, animated: true)
     }
     
     @objc private func uploadButtonTapped() {
