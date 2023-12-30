@@ -35,6 +35,9 @@
 		22B26C362B3F541C00195585 /* SearchBarcodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C352B3F541C00195585 /* SearchBarcodeViewController.swift */; };
 		22B26C382B3F593C00195585 /* SearchNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C372B3F593C00195585 /* SearchNameView.swift */; };
 		22B26C3A2B3F597100195585 /* SearchBarcodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C392B3F597100195585 /* SearchBarcodeView.swift */; };
+		22B26C3C2B3F719A00195585 /* SearchItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C3B2B3F719A00195585 /* SearchItemTableViewCell.swift */; };
+		22B26C3E2B3F73D200195585 /* SearchItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C3D2B3F73D200195585 /* SearchItemModel.swift */; };
+		22B26C412B40390800195585 /* TemplateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C402B40390800195585 /* TemplateData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +71,9 @@
 		22B26C352B3F541C00195585 /* SearchBarcodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarcodeViewController.swift; sourceTree = "<group>"; };
 		22B26C372B3F593C00195585 /* SearchNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNameView.swift; sourceTree = "<group>"; };
 		22B26C392B3F597100195585 /* SearchBarcodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarcodeView.swift; sourceTree = "<group>"; };
+		22B26C3B2B3F719A00195585 /* SearchItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemTableViewCell.swift; sourceTree = "<group>"; };
+		22B26C3D2B3F73D200195585 /* SearchItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemModel.swift; sourceTree = "<group>"; };
+		22B26C402B40390800195585 /* TemplateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +144,7 @@
 		2283171D2B336B3D0079333F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				22B26C3D2B3F73D200195585 /* SearchItemModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -166,6 +173,7 @@
 				228317102B3366040079333F /* LaunchScreen.storyboard */,
 				2283170E2B3366040079333F /* Assets.xcassets */,
 				228317072B3366030079333F /* SceneDelegate.swift */,
+				22B26C402B40390800195585 /* TemplateData.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -184,6 +192,7 @@
 			children = (
 				228317262B3440170079333F /* TitleLabel.swift */,
 				228317282B3440FF0079333F /* RoundedGreenButton.swift */,
+				22B26C3B2B3F719A00195585 /* SearchItemTableViewCell.swift */,
 				22B26C2B2B3C3FA700195585 /* ProfileLabelView.swift */,
 			);
 			path = CustomComponents;
@@ -265,7 +274,9 @@
 				22B26C342B3F53B700195585 /* SearchNameViewController.swift in Sources */,
 				228317352B346F310079333F /* HomeView.swift in Sources */,
 				228317062B3366030079333F /* AppDelegate.swift in Sources */,
+				22B26C412B40390800195585 /* TemplateData.swift in Sources */,
 				22B26C2C2B3C3FA700195585 /* ProfileLabelView.swift in Sources */,
+				22B26C3C2B3F719A00195585 /* SearchItemTableViewCell.swift in Sources */,
 				22B26C382B3F593C00195585 /* SearchNameView.swift in Sources */,
 				228317212B343CAC0079333F /* LoginSignupView.swift in Sources */,
 				22B26C302B3C476200195585 /* ChangePasswordViewController.swift in Sources */,
@@ -276,6 +287,7 @@
 				22B26C322B3F536500195585 /* SearchTabViewController.swift in Sources */,
 				228317082B3366030079333F /* SceneDelegate.swift in Sources */,
 				22B26C222B3C283F00195585 /* ProfileView.swift in Sources */,
+				22B26C3E2B3F73D200195585 /* SearchItemModel.swift in Sources */,
 				22B26C262B3C387900195585 /* ChangeProfileNameView.swift in Sources */,
 				228317242B343EF00079333F /* UIColorExtensions.swift in Sources */,
 				228317312B346DB10079333F /* LoginView.swift in Sources */,

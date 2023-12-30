@@ -33,5 +33,4 @@ class SearchBarcodeViewController: UIViewController {
     @objc private func backButtonTapped() {
         navigationController?.popViewController(animated: true)
     }
-
 }

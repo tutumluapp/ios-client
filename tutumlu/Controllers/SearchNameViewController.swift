@@ -23,6 +23,7 @@ class SearchNameViewController: UIViewController {
     }
     
     private func setupBindings() {
+        
     }
     
     
@@ -32,6 +33,4 @@ class SearchNameViewController: UIViewController {
     @objc private func backButtonTapped() {
         navigationController?.popViewController(animated: true)
     }
-
-
 }
