@@ -10,6 +10,7 @@ import UIKit
 class SearchBarcodeView: UIView {
     
     let scanButton = RoundedGreenButton()
+    let itemPriceView = ItemPriceView()
 
     
     override init(frame: CGRect) {
@@ -25,20 +26,28 @@ class SearchBarcodeView: UIView {
     private func setupView() {
         backgroundColor = .white
         
+        itemPriceView.isHidden = true
+                
         scanButton.setTitle("Scan Barcode", for: .normal)
         
+        addSubview(itemPriceView)
         addSubview(scanButton)
     }
 
     
     private func setupConstraints() {
         scanButton.translatesAutoresizingMaskIntoConstraints = false
+        itemPriceView.translatesAutoresizingMaskIntoConstraints = false
                 
         NSLayoutConstraint.activate([
+            itemPriceView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            itemPriceView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            itemPriceView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            
             scanButton.heightAnchor.constraint(equalToConstant: 100),
+            scanButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -100),
             scanButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-            scanButton.centerYAnchor.constraint(equalTo: centerYAnchor),
-            scanButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.8),
+            scanButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.8)
         ])
     }
 

@@ -23,7 +23,7 @@ class SearchBarcodeViewController: UIViewController {
     }
     
     private func setupBindings() {
-        
+        searchBarcodeView.scanButton.addTarget(self, action: #selector(scanButtonTapped), for: .touchUpInside)
     }
     
 
@@ -32,5 +32,22 @@ class SearchBarcodeViewController: UIViewController {
     
     @objc private func backButtonTapped() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc private func scanButtonTapped() {
+        let scanVC = BarcodeScanViewController()
+        scanVC.delegate = self
+        navigationController?.pushViewController(scanVC, animated: true)
+        
+    }
+}
+
+
+extension SearchBarcodeViewController: BarcodeScanViewControllerDelegate {
+    func barcodeDidScan(_ barcode: String) {
+        var item = SearchData.items[1]
+        item.name = barcode
+        searchBarcodeView.itemPriceView.configure(with: item)
+        searchBarcodeView.itemPriceView.isHidden = false
     }
 }

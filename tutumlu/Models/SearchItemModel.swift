@@ -6,7 +6,7 @@
 //
 
 struct SearchItem {
-    let name: String
+    var name: String
     let priceInfo: [PriceInfo]
 }
 

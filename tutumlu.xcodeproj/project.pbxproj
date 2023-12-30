@@ -38,6 +38,8 @@
 		22B26C3C2B3F719A00195585 /* SearchItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C3B2B3F719A00195585 /* SearchItemTableViewCell.swift */; };
 		22B26C3E2B3F73D200195585 /* SearchItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C3D2B3F73D200195585 /* SearchItemModel.swift */; };
 		22B26C412B40390800195585 /* TemplateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C402B40390800195585 /* TemplateData.swift */; };
+		22B26C432B40608F00195585 /* BarcodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C422B40608F00195585 /* BarcodeScannerViewController.swift */; };
+		22B26C452B407D5F00195585 /* ItemPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C442B407D5F00195585 /* ItemPriceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +76,8 @@
 		22B26C3B2B3F719A00195585 /* SearchItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemTableViewCell.swift; sourceTree = "<group>"; };
 		22B26C3D2B3F73D200195585 /* SearchItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemModel.swift; sourceTree = "<group>"; };
 		22B26C402B40390800195585 /* TemplateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateData.swift; sourceTree = "<group>"; };
+		22B26C422B40608F00195585 /* BarcodeScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScannerViewController.swift; sourceTree = "<group>"; };
+		22B26C442B407D5F00195585 /* ItemPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemPriceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +164,7 @@
 				22B26C232B3C386500195585 /* ChangeProfileNameViewController.swift */,
 				22B26C2F2B3C476200195585 /* ChangePasswordViewController.swift */,
 				22B26C312B3F536500195585 /* SearchTabViewController.swift */,
+				22B26C422B40608F00195585 /* BarcodeScannerViewController.swift */,
 				22B26C332B3F53B700195585 /* SearchNameViewController.swift */,
 				22B26C352B3F541C00195585 /* SearchBarcodeViewController.swift */,
 			);
@@ -193,6 +198,7 @@
 				228317262B3440170079333F /* TitleLabel.swift */,
 				228317282B3440FF0079333F /* RoundedGreenButton.swift */,
 				22B26C3B2B3F719A00195585 /* SearchItemTableViewCell.swift */,
+				22B26C442B407D5F00195585 /* ItemPriceView.swift */,
 				22B26C2B2B3C3FA700195585 /* ProfileLabelView.swift */,
 			);
 			path = CustomComponents;
@@ -277,6 +283,7 @@
 				22B26C412B40390800195585 /* TemplateData.swift in Sources */,
 				22B26C2C2B3C3FA700195585 /* ProfileLabelView.swift in Sources */,
 				22B26C3C2B3F719A00195585 /* SearchItemTableViewCell.swift in Sources */,
+				22B26C452B407D5F00195585 /* ItemPriceView.swift in Sources */,
 				22B26C382B3F593C00195585 /* SearchNameView.swift in Sources */,
 				228317212B343CAC0079333F /* LoginSignupView.swift in Sources */,
 				22B26C302B3C476200195585 /* ChangePasswordViewController.swift in Sources */,
@@ -288,6 +295,7 @@
 				228317082B3366030079333F /* SceneDelegate.swift in Sources */,
 				22B26C222B3C283F00195585 /* ProfileView.swift in Sources */,
 				22B26C3E2B3F73D200195585 /* SearchItemModel.swift in Sources */,
+				22B26C432B40608F00195585 /* BarcodeScannerViewController.swift in Sources */,
 				22B26C262B3C387900195585 /* ChangeProfileNameView.swift in Sources */,
 				228317242B343EF00079333F /* UIColorExtensions.swift in Sources */,
 				228317312B346DB10079333F /* LoginView.swift in Sources */,
