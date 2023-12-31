@@ -41,6 +41,10 @@
 		22B26C432B40608F00195585 /* BarcodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C422B40608F00195585 /* BarcodeScannerViewController.swift */; };
 		22B26C452B407D5F00195585 /* ItemPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C442B407D5F00195585 /* ItemPriceView.swift */; };
 		22B26C512B41C5A700195585 /* KeyboardDismissExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C502B41C5A700195585 /* KeyboardDismissExtension.swift */; };
+		22B26C472B41664200195585 /* UploadSlipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C462B41664200195585 /* UploadSlipViewController.swift */; };
+		22B26C492B41665D00195585 /* UploadSlipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C482B41665D00195585 /* UploadSlipView.swift */; };
+		22B26C4B2B4166D600195585 /* UploadSlipTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C4A2B4166D600195585 /* UploadSlipTableViewCell.swift */; };
+		22B26C4D2B416D6C00195585 /* UploadItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C4C2B416D6C00195585 /* UploadItemModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +84,10 @@
 		22B26C422B40608F00195585 /* BarcodeScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScannerViewController.swift; sourceTree = "<group>"; };
 		22B26C442B407D5F00195585 /* ItemPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemPriceView.swift; sourceTree = "<group>"; };
 		22B26C502B41C5A700195585 /* KeyboardDismissExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDismissExtension.swift; sourceTree = "<group>"; };
+		22B26C462B41664200195585 /* UploadSlipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadSlipViewController.swift; sourceTree = "<group>"; };
+		22B26C482B41665D00195585 /* UploadSlipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadSlipView.swift; sourceTree = "<group>"; };
+		22B26C4A2B4166D600195585 /* UploadSlipTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadSlipTableViewCell.swift; sourceTree = "<group>"; };
+		22B26C4C2B416D6C00195585 /* UploadItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadItemModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +137,7 @@
 				228317202B343CAC0079333F /* LoginSignupView.swift */,
 				22B26C212B3C283F00195585 /* ProfileView.swift */,
 				228317302B346DB10079333F /* LoginView.swift */,
+				22B26C482B41665D00195585 /* UploadSlipView.swift */,
 				22B26C252B3C387900195585 /* ChangeProfileNameView.swift */,
 				228317342B346F310079333F /* HomeView.swift */,
 				22B26C2D2B3C475200195585 /* ChangePasswordView.swift */,
@@ -151,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				22B26C3D2B3F73D200195585 /* SearchItemModel.swift */,
+				22B26C4C2B416D6C00195585 /* UploadItemModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -168,6 +178,7 @@
 				22B26C312B3F536500195585 /* SearchTabViewController.swift */,
 				22B26C422B40608F00195585 /* BarcodeScannerViewController.swift */,
 				22B26C332B3F53B700195585 /* SearchNameViewController.swift */,
+				22B26C462B41664200195585 /* UploadSlipViewController.swift */,
 				22B26C352B3F541C00195585 /* SearchBarcodeViewController.swift */,
 			);
 			path = Controllers;
@@ -201,6 +212,7 @@
 				228317262B3440170079333F /* TitleLabel.swift */,
 				228317282B3440FF0079333F /* RoundedGreenButton.swift */,
 				22B26C3B2B3F719A00195585 /* SearchItemTableViewCell.swift */,
+				22B26C4A2B4166D600195585 /* UploadSlipTableViewCell.swift */,
 				22B26C442B407D5F00195585 /* ItemPriceView.swift */,
 				22B26C2B2B3C3FA700195585 /* ProfileLabelView.swift */,
 			);
@@ -288,9 +300,11 @@
 				22B26C2C2B3C3FA700195585 /* ProfileLabelView.swift in Sources */,
 				22B26C3C2B3F719A00195585 /* SearchItemTableViewCell.swift in Sources */,
 				22B26C452B407D5F00195585 /* ItemPriceView.swift in Sources */,
+				22B26C4D2B416D6C00195585 /* UploadItemModel.swift in Sources */,
 				22B26C382B3F593C00195585 /* SearchNameView.swift in Sources */,
 				228317212B343CAC0079333F /* LoginSignupView.swift in Sources */,
 				22B26C302B3C476200195585 /* ChangePasswordViewController.swift in Sources */,
+				22B26C492B41665D00195585 /* UploadSlipView.swift in Sources */,
 				228317272B3440170079333F /* TitleLabel.swift in Sources */,
 				22B26C2E2B3C475200195585 /* ChangePasswordView.swift in Sources */,
 				2283172B2B3442080079333F /* SignupView.swift in Sources */,
@@ -299,7 +313,9 @@
 				228317082B3366030079333F /* SceneDelegate.swift in Sources */,
 				22B26C222B3C283F00195585 /* ProfileView.swift in Sources */,
 				22B26C3E2B3F73D200195585 /* SearchItemModel.swift in Sources */,
+				22B26C472B41664200195585 /* UploadSlipViewController.swift in Sources */,
 				22B26C432B40608F00195585 /* BarcodeScannerViewController.swift in Sources */,
+				22B26C4B2B4166D600195585 /* UploadSlipTableViewCell.swift in Sources */,
 				22B26C262B3C387900195585 /* ChangeProfileNameView.swift in Sources */,
 				228317242B343EF00079333F /* UIColorExtensions.swift in Sources */,
 				228317312B346DB10079333F /* LoginView.swift in Sources */,

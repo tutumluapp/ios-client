@@ -25,6 +25,7 @@ class HomeViewController: UIViewController {
     
     private func setupBindings() {
         homeView.searchButton.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)
+        homeView.uploadButton.addTarget(self, action: #selector(uploadButtonTapped), for: .touchUpInside)
     }
     
     private func setupNavigationBar() {
@@ -41,7 +42,8 @@ class HomeViewController: UIViewController {
     }
     
     @objc private func uploadButtonTapped() {
-        // Handle upload button tap
+        let uploadVC = UploadSlipViewController()
+        navigationController?.pushViewController(uploadVC, animated: true)
     }
     
     @objc private func backButtonTapped() {
