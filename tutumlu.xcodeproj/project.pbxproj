@@ -40,6 +40,7 @@
 		22B26C412B40390800195585 /* TemplateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C402B40390800195585 /* TemplateData.swift */; };
 		22B26C432B40608F00195585 /* BarcodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C422B40608F00195585 /* BarcodeScannerViewController.swift */; };
 		22B26C452B407D5F00195585 /* ItemPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C442B407D5F00195585 /* ItemPriceView.swift */; };
+		22B26C512B41C5A700195585 /* KeyboardDismissExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C502B41C5A700195585 /* KeyboardDismissExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		22B26C402B40390800195585 /* TemplateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateData.swift; sourceTree = "<group>"; };
 		22B26C422B40608F00195585 /* BarcodeScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScannerViewController.swift; sourceTree = "<group>"; };
 		22B26C442B407D5F00195585 /* ItemPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemPriceView.swift; sourceTree = "<group>"; };
+		22B26C502B41C5A700195585 /* KeyboardDismissExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDismissExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 			children = (
 				228317232B343EF00079333F /* UIColorExtensions.swift */,
 				22B26C1D2B3C24DB00195585 /* ProfileButtonExtension.swift */,
+				22B26C502B41C5A700195585 /* KeyboardDismissExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				2283172D2B3442380079333F /* SignupViewController.swift in Sources */,
 				22B26C3A2B3F597100195585 /* SearchBarcodeView.swift in Sources */,
 				2283170A2B3366030079333F /* LoginSignupViewController.swift in Sources */,
+				22B26C512B41C5A700195585 /* KeyboardDismissExtension.swift in Sources */,
 				22B26C342B3F53B700195585 /* SearchNameViewController.swift in Sources */,
 				228317352B346F310079333F /* HomeView.swift in Sources */,
 				228317062B3366030079333F /* AppDelegate.swift in Sources */,

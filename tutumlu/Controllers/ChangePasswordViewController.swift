@@ -13,7 +13,8 @@ class ChangePasswordViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.hideKeyboardWhenTappedAround()
+
         changePasswordView = ChangePasswordView()
         view.addSubview(changePasswordView)
         

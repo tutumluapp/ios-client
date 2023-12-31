@@ -13,7 +13,8 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.hideKeyboardWhenTappedAround()
+
         // Initialize your custom view and add it as a subview
         loginView = LoginView()
         view.addSubview(loginView)
