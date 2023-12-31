@@ -18,6 +18,8 @@ class SignupViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
+
         setupBindings()
         setupNavigationBar()
     }

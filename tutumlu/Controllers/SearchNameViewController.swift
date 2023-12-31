@@ -18,6 +18,7 @@ class SearchNameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
 
         setupBindings()
     }
