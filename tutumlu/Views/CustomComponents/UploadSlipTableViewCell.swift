@@ -10,8 +10,11 @@ import UIKit
 class UploadSlipTableViewCell: UITableViewCell {
     let namePriceStackView = UIStackView()
     let itemNameLabel = UILabel()
-    let scanButton = UIButton(type: .system)
     let priceLabel = UILabel()
+    
+    let scanButtonBarcodeStackView = UIStackView()
+    let scanButton = UIButton(type: .system)
+    let barcodeLabel = UILabel()
     
     var scanAction: (() -> Void)?
     
@@ -20,6 +23,7 @@ class UploadSlipTableViewCell: UITableViewCell {
             scanButton.setTitle(isScanned ? "  Barcode scanned" : "  Scan barcode", for: .normal)
             let image = isScanned ? UIImage(systemName: "checkmark.circle.fill") : UIImage(systemName: "barcode.viewfinder")
             scanButton.setImage(image, for: .normal)
+            barcodeLabel.isHidden = isScanned ? false : true
         }
     }
     
@@ -34,6 +38,7 @@ class UploadSlipTableViewCell: UITableViewCell {
     }
     
     private func setupViews() {
+        // Top stack view to hold item name and price info
         namePriceStackView.axis = .horizontal
         namePriceStackView.distribution = .fill
         namePriceStackView.alignment = .center
@@ -51,23 +56,42 @@ class UploadSlipTableViewCell: UITableViewCell {
         
         namePriceStackView.addArrangedSubview(itemNameLabelContainer)
         namePriceStackView.addArrangedSubview(priceLabelContainer)
+        
+        
+        // Bottom stack view to hold scan button and barcode id
+        scanButtonBarcodeStackView.axis = .horizontal
+        scanButtonBarcodeStackView.distribution = .fill
+        scanButtonBarcodeStackView.alignment = .center
+        scanButtonBarcodeStackView.spacing = 8
+        
+        barcodeLabel.textAlignment = .right
+        barcodeLabel.font = UIFont.systemFont(ofSize: 15)
+        
+        let barcodeLabelContainer = UIView()
+        
+        barcodeLabelContainer.addSubview(barcodeLabel)
+        
+        scanButtonBarcodeStackView.addArrangedSubview(scanButton)
+        scanButtonBarcodeStackView.addArrangedSubview(barcodeLabelContainer)
+        
                 
         scanButton.addTarget(self, action: #selector(scanButtonTapped), for: .touchUpInside)
                 
         contentView.addSubview(namePriceStackView)
-        contentView.addSubview(scanButton)
+        contentView.addSubview(scanButtonBarcodeStackView)
         
         namePriceStackView.translatesAutoresizingMaskIntoConstraints = false
         itemNameLabel.translatesAutoresizingMaskIntoConstraints = false
-        scanButton.translatesAutoresizingMaskIntoConstraints = false
         priceLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        scanButtonBarcodeStackView.translatesAutoresizingMaskIntoConstraints = false
+        barcodeLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             itemNameLabel.topAnchor.constraint(equalTo: itemNameLabelContainer.topAnchor),
             itemNameLabel.leadingAnchor.constraint(equalTo: itemNameLabelContainer.leadingAnchor),
             itemNameLabel.trailingAnchor.constraint(equalTo: itemNameLabelContainer.trailingAnchor),
             itemNameLabel.bottomAnchor.constraint(equalTo: itemNameLabelContainer.bottomAnchor),
-            
             
             priceLabel.topAnchor.constraint(equalTo: priceLabelContainer.topAnchor),
             priceLabel.bottomAnchor.constraint(equalTo: priceLabelContainer.bottomAnchor),
@@ -78,8 +102,15 @@ class UploadSlipTableViewCell: UITableViewCell {
             namePriceStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             namePriceStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             
-            scanButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16),
-            scanButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            barcodeLabel.topAnchor.constraint(equalTo: barcodeLabelContainer.topAnchor),
+            barcodeLabel.bottomAnchor.constraint(equalTo: barcodeLabelContainer.bottomAnchor),
+            barcodeLabel.leadingAnchor.constraint(equalTo: barcodeLabelContainer.leadingAnchor),
+            barcodeLabel.trailingAnchor.constraint(equalTo: barcodeLabelContainer.trailingAnchor, constant: -16),
+            
+            
+            scanButtonBarcodeStackView.topAnchor.constraint(equalTo: namePriceStackView.bottomAnchor, constant: 16),
+            scanButtonBarcodeStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            scanButtonBarcodeStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16)
         ])
     }
     
@@ -95,6 +126,7 @@ class UploadSlipTableViewCell: UITableViewCell {
     func configure(with item: UploadItem) {
         itemNameLabel.text = item.name
         priceLabel.text = "Price : " + String(format: "%.2f", item.price)
+        barcodeLabel.text = "ID: \(item.barcodeID)"
 
         setNeedsLayout()
     }

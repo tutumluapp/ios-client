@@ -170,7 +170,7 @@ extension UploadSlipView: UITableViewDataSource {
         
         cell.scanAction = { [weak self] in
             guard let strongSelf = self else { return }
-            strongSelf.isScanned[indexPath.row] = !strongSelf.isScanned[indexPath.row]
+            strongSelf.isScanned[indexPath.row] = true
             
             tableView.reloadRows(at: [indexPath], with: .automatic)
         }
