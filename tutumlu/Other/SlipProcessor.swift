@@ -1,41 +1,20 @@
 //
-//  SlipScannerViewController.swift
+//  SlipProcessor.swift
 //  tutumlu
 //
-//  Created by ali-kerem on 1.01.2024.
+//  Created by ali-kerem on 2.01.2024.
 //
 
-import Foundation
 import UIKit
 import Vision
 
-class SlipScannerViewController: UIViewController {
-    
-    var slipData = SlipDataModel()
-    
-    struct RecognizedText {
-        let text: String
-        let boundingBox: CGRect
-    }
+struct RecognizedText {
+    let text: String
+    let boundingBox: CGRect
+}
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        DispatchQueue.global(qos: .userInitiated).async {
-            guard let img = UIImage(named: "testImage") else {
-                fatalError("Missing image to scan")
-            }
-
-            guard let preprocessedImage = self.preprocessImage(img) else {
-                fatalError("Could not preprocess image")
-            }
-
-            self.performTextRecognition(on: preprocessedImage)
-        }
-    
-    }
-    
-    private func preprocessImage(_ image: UIImage) -> UIImage? {
+class ImagePreProcessor {
+    static func preprocessImage(_ image: UIImage) -> UIImage? {
         // Preprocess the image to enhance quality
         guard let ciImage = CIImage(image: image) else { return nil }
         let filter = CIFilter(name: "CIPhotoEffectNoir") // Grayscale
@@ -47,25 +26,40 @@ class SlipScannerViewController: UIViewController {
         
         return nil
     }
+}
 
-    private func performTextRecognition(on image: UIImage) {
+class SlipParser {
+    var slipData = SlipDataModel() // Define slipData here
+
+    func performTextRecognition(on image: UIImage, completion: @escaping (SlipDataModel?) -> Void) {
         guard let cgImage = image.cgImage else {
-            fatalError("Unable to get CGImage from input image")
+            completion(nil) // Return nil if cgImage is not available
+            return
         }
 
         let handler = VNImageRequestHandler(cgImage: cgImage, options: [:])
-        let request = VNRecognizeTextRequest(completionHandler: handleTextRecognition)
-        request.recognitionLevel = .accurate // Higher accuracy
-        // request.recognitionLanguages = ["tr-TR"] // Specify language if known
+        let request = VNRecognizeTextRequest { [weak self] (request, error) in
+            if let error = error {
+                print("Failed to perform text recognition: \(error)")
+                completion(nil) // Return nil in case of an error
+                return
+            }
+
+            self?.handleTextRecognition(request: request, error: error)
+            completion(self?.slipData) // Return the updated slipData
+        }
+
+        request.recognitionLevel = .accurate // Use .accurate or .fast based on your need
 
         do {
             try handler.perform([request])
         } catch {
             print("Failed to perform text recognition: \(error)")
+            completion(nil) // Return nil in case of an error
         }
     }
 
-    private func handleTextRecognition(request: VNRequest, error: Error?) {
+    func handleTextRecognition(request: VNRequest, error: Error?) {
         guard let observations = request.results as? [VNRecognizedTextObservation] else {
             fatalError("Received invalid observations")
         }
@@ -83,7 +77,7 @@ class SlipScannerViewController: UIViewController {
         getTextLineByLine(from: recognizedTexts)
     }
 
-    private func getTextLineByLine(from recognizedTexts: [RecognizedText]) {
+    func getTextLineByLine(from recognizedTexts: [RecognizedText]) {
         // Threshold to determine if texts are on the same line
         let sameLineThreshold: CGFloat = 0.02
         
@@ -123,7 +117,7 @@ class SlipScannerViewController: UIViewController {
     }
     
     
-    private func processLines(_ lines: [String]) {
+    func processLines(_ lines: [String]) {
         for (index, line) in lines.enumerated() {
             // Check for market name in the first few lines
             if index < 3, let marketName = findMarketName(in: line) {
@@ -148,7 +142,7 @@ class SlipScannerViewController: UIViewController {
                 }
             }
         }
-        /*
+        
         print("Market : \(slipData.marketName ?? "No market found")")
         print("Date : \(slipData.date ?? "No date found")")
         print("Time : \(slipData.time ?? "No time found")")
@@ -160,10 +154,10 @@ class SlipScannerViewController: UIViewController {
                 print("Item Name: \(item.name ?? "null"), Price: \(item.price ?? 0), Barcode ID: \(item.barcodeID ?? "null")")
             }
         }
-        */
+        
     }
 
-    private func findMarketName(in text: String) -> String? {
+    func findMarketName(in text: String) -> String? {
         let marketNames = ["A101", "Migros", "Şok", "Sok", "Erkoc", "Erkoç"]
         for market in marketNames {
             if text.lowercased().folding(options: .diacriticInsensitive, locale: .current).contains(market.lowercased()) {
@@ -186,7 +180,7 @@ class SlipScannerViewController: UIViewController {
     }
 
 
-    private func findTime(in text: String) -> String? {
+    func findTime(in text: String) -> String? {
         let timeRegex = "\\b\\d{2}:\\d{2}(?::\\d{2})?\\b"
         let matches = text.matchingStrings(regex: timeRegex)
 
@@ -198,7 +192,7 @@ class SlipScannerViewController: UIViewController {
         return nil
     }
 
-    private func parseItem(from text: String) -> UploadItem? {
+    func parseItem(from text: String) -> UploadItem? {
         // Updated regex to capture item name and price
         let itemRegex = "([\\w\\s]+) %\\d{1,2} [*,#]?([0-9]{1,4}[.,][0-9]{2})"
         let matches = text.matchingStrings(regex: itemRegex)
@@ -215,16 +209,7 @@ class SlipScannerViewController: UIViewController {
         return nil
     }
 }
-/*
-extension String {
-    func matchingStrings(regex: String) -> [[String]] {
-        guard let regex = try? NSRegularExpression(pattern: regex, options: []) else { return [] }
-        let range = NSRange(startIndex..., in: self)
-        let matches = regex.matches(in: self, options: [], range: range)
 
-        return matches.map { match in
-            (0..<match.numberOfRanges).compactMap { Range(match.range(at: $0), in: self).map { String(self[$0]) } }
-        }
-    }
-}
-*/
+
+
+

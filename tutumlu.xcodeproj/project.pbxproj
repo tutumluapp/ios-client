@@ -47,6 +47,8 @@
 		22B26C512B41C5A700195585 /* KeyboardDismissExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C502B41C5A700195585 /* KeyboardDismissExtension.swift */; };
 		22B26C532B42CBBF00195585 /* SlipScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C522B42CBBF00195585 /* SlipScannerViewController.swift */; };
 		22B26C552B433E6400195585 /* SlipDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C542B433E6400195585 /* SlipDataModel.swift */; };
+		22B26C572B44993700195585 /* SlipProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C562B44993700195585 /* SlipProcessor.swift */; };
+		22B26C592B44A70700195585 /* MatchStringsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C582B44A70700195585 /* MatchStringsExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +94,8 @@
 		22B26C502B41C5A700195585 /* KeyboardDismissExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDismissExtension.swift; sourceTree = "<group>"; };
 		22B26C522B42CBBF00195585 /* SlipScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlipScannerViewController.swift; sourceTree = "<group>"; };
 		22B26C542B433E6400195585 /* SlipDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlipDataModel.swift; sourceTree = "<group>"; };
+		22B26C562B44993700195585 /* SlipProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlipProcessor.swift; sourceTree = "<group>"; };
+		22B26C582B44A70700195585 /* MatchStringsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchStringsExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +202,7 @@
 				2283170E2B3366040079333F /* Assets.xcassets */,
 				228317072B3366030079333F /* SceneDelegate.swift */,
 				22B26C402B40390800195585 /* TemplateData.swift */,
+				22B26C562B44993700195585 /* SlipProcessor.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -206,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				228317232B343EF00079333F /* UIColorExtensions.swift */,
+				22B26C582B44A70700195585 /* MatchStringsExtension.swift */,
 				22B26C1D2B3C24DB00195585 /* ProfileButtonExtension.swift */,
 				22B26C502B41C5A700195585 /* KeyboardDismissExtension.swift */,
 			);
@@ -297,9 +303,11 @@
 			files = (
 				2283172D2B3442380079333F /* SignupViewController.swift in Sources */,
 				22B26C3A2B3F597100195585 /* SearchBarcodeView.swift in Sources */,
+				22B26C592B44A70700195585 /* MatchStringsExtension.swift in Sources */,
 				2283170A2B3366030079333F /* LoginSignupViewController.swift in Sources */,
 				22B26C512B41C5A700195585 /* KeyboardDismissExtension.swift in Sources */,
 				22B26C342B3F53B700195585 /* SearchNameViewController.swift in Sources */,
+				22B26C572B44993700195585 /* SlipProcessor.swift in Sources */,
 				228317352B346F310079333F /* HomeView.swift in Sources */,
 				228317062B3366030079333F /* AppDelegate.swift in Sources */,
 				22B26C412B40390800195585 /* TemplateData.swift in Sources */,

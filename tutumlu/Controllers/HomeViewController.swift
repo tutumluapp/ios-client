@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class HomeViewController: UIViewController {
     
@@ -42,10 +43,10 @@ class HomeViewController: UIViewController {
     }
     
     @objc private func uploadButtonTapped() {
-        let uploadVC = UploadSlipViewController()
-        navigationController?.pushViewController(uploadVC, animated: true)
+        checkCameraPermissionsAndOpenCamera()
+        // self.processAndUploadImage(UIImage(named: "testImage")!)
     }
-    
+
     @objc private func backButtonTapped() {
         navigationController?.popViewController(animated: true)
     }
@@ -53,5 +54,82 @@ class HomeViewController: UIViewController {
     @objc private func profileButtonTapped() {
         let profileVC = ProfileViewController()
         navigationController?.pushViewController(profileVC, animated: true)
+    }
+    
+    private func checkCameraPermissionsAndOpenCamera() {
+        switch AVCaptureDevice.authorizationStatus(for: .video) {
+        case .authorized:
+            openCamera()
+        case .notDetermined:
+            AVCaptureDevice.requestAccess(for: .video) { granted in
+                if granted {
+                    DispatchQueue.main.async {
+                        self.openCamera()
+                    }
+                }
+            }
+        case .denied, .restricted:
+            // Handle permission denied
+            break
+        @unknown default:
+            break
+        }
+    }
+    
+    private func openCamera() {
+        let imagePickerController = UIImagePickerController()
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            imagePickerController.sourceType = .camera
+            imagePickerController.delegate = self
+            present(imagePickerController, animated: true)
+        } else {
+            // Handle camera not available
+        }
+    }
+}
+
+extension HomeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        picker.dismiss(animated: true) {
+            if let image = info[.originalImage] as? UIImage {
+                self.processAndUploadImage(image)
+            }
+        }
+    }
+
+    private func processAndUploadImage(_ image: UIImage) {
+        let loadingIndicator = showLoadingIndicator()
+
+        DispatchQueue.global(qos: .userInitiated).async {
+            let processedImage = ImagePreProcessor.preprocessImage(image)
+            let imageProcessor = SlipParser()
+            imageProcessor.performTextRecognition(on: processedImage!) { slipData in
+                DispatchQueue.main.async {
+                    loadingIndicator.dismiss(animated: true) {
+                        if let slipData = slipData {
+                            self.navigateToUploadSlipViewController(with: slipData)
+                        } else {
+                            // Handle error
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private func showLoadingIndicator() -> UIAlertController {
+        let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.style = .medium
+        loadingIndicator.startAnimating()
+        alert.view.addSubview(loadingIndicator)
+        present(alert, animated: true, completion: nil)
+        return alert
+    }
+
+    private func navigateToUploadSlipViewController(with slipData: SlipDataModel) {
+        let uploadVC = UploadSlipViewController(slipData: slipData)
+        navigationController?.pushViewController(uploadVC, animated: true)
     }
 }

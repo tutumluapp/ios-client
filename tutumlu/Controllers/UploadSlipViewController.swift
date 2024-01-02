@@ -10,6 +10,17 @@ import UIKit
 class UploadSlipViewController: UIViewController {
 
     private var uploadSlipView: UploadSlipView!
+    
+    private var slipData: SlipDataModel
+
+    init(slipData: SlipDataModel) {
+        self.slipData = slipData
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func loadView() {
         uploadSlipView = UploadSlipView()
