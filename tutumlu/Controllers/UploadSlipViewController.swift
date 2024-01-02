@@ -24,7 +24,8 @@ class UploadSlipViewController: UIViewController {
     }
     
     private func setupBindings() {
-        
+        uploadSlipView.uploadButton.addTarget(self, action: #selector(uploadButtonTapped), for: .touchUpInside)
+
     }
     
     private func setupNavigationBar() {
@@ -45,4 +46,13 @@ class UploadSlipViewController: UIViewController {
         let profileVC = ProfileViewController()
         navigationController?.pushViewController(profileVC, animated: true)
     }
+    
+    
+    @objc private func uploadButtonTapped() {
+        let uploadVC = SlipScannerViewController()
+        navigationController?.pushViewController(uploadVC, animated: true)
+    }
+    
+    
 }
+

@@ -6,7 +6,7 @@
 //
 
 struct UploadItem {
-    var name: String
-    let price: Double
-    var barcodeID: String
+    var name: String?
+    let price: Double?
+    var barcodeID: String?
 }

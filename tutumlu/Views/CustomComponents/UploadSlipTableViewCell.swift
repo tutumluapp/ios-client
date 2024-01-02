@@ -125,8 +125,8 @@ class UploadSlipTableViewCell: UITableViewCell {
     // Method to configure the cell with data
     func configure(with item: UploadItem) {
         itemNameLabel.text = item.name
-        priceLabel.text = "Price : " + String(format: "%.2f", item.price)
-        barcodeLabel.text = "ID: \(item.barcodeID)"
+        priceLabel.text = "Price : " + String(format: "%.2f", item.price!)
+        barcodeLabel.text = "ID: \(item.barcodeID ?? "Not found")"
 
         setNeedsLayout()
     }
