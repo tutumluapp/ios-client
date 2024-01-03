@@ -142,7 +142,7 @@ class SlipParser {
                 }
             }
         }
-        
+        /*
         print("Market : \(slipData.marketName ?? "No market found")")
         print("Date : \(slipData.date ?? "No date found")")
         print("Time : \(slipData.time ?? "No time found")")
@@ -154,6 +154,7 @@ class SlipParser {
                 print("Item Name: \(item.name ?? "null"), Price: \(item.price ?? 0), Barcode ID: \(item.barcodeID ?? "null")")
             }
         }
+        */
         
     }
 

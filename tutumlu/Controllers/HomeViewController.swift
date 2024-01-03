@@ -43,8 +43,9 @@ class HomeViewController: UIViewController {
     }
     
     @objc private func uploadButtonTapped() {
+        // Alternative
         checkCameraPermissionsAndOpenCamera()
-        // self.processAndUploadImage(UIImage(named: "testImage")!)
+        // self.processAndUploadImage(UIImage(named: "Image")!)
     }
 
     @objc private func backButtonTapped() {
@@ -129,7 +130,8 @@ extension HomeViewController: UIImagePickerControllerDelegate, UINavigationContr
     }
 
     private func navigateToUploadSlipViewController(with slipData: SlipDataModel) {
-        let uploadVC = UploadSlipViewController(slipData: slipData)
+        let viewModel = UploadSlipViewModel(slipData: slipData)
+        let uploadVC = UploadSlipViewController(viewModel: viewModel)
         navigationController?.pushViewController(uploadVC, animated: true)
     }
 }

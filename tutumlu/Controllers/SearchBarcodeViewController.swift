@@ -62,6 +62,7 @@ class SearchBarcodeViewController: UIViewController {
 
     private func navigateToScanVC() {
         let scanVC = BarcodeScanViewController()
+        scanVC.scanningContext = .searchItem
         scanVC.delegate = self
         navigationController?.pushViewController(scanVC, animated: true)
     }
@@ -86,11 +87,16 @@ class SearchBarcodeViewController: UIViewController {
 }
 
 
-extension SearchBarcodeViewController: BarcodeScanViewControllerDelegate {
-    func barcodeDidScan(_ barcode: String) {
-        var item = SearchData.items[1]
-        item.name = barcode
-        searchBarcodeView.itemPriceView.configure(with: item)
-        searchBarcodeView.itemPriceView.isHidden = false
+extension SearchBarcodeViewController: BarcodeScanViewControllerDelegate {    
+    func barcodeDidScan(_ barcode: String, context: BarcodeScanningContext) {
+        switch context {
+            case .uploadSlip:
+                return
+            case .searchItem:
+                var item = SearchData.items[1]
+                item.name = barcode
+                searchBarcodeView.itemPriceView.configure(with: item)
+                searchBarcodeView.itemPriceView.isHidden = false
+        }
     }
 }

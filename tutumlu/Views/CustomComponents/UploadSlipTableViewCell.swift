@@ -16,6 +16,8 @@ class UploadSlipTableViewCell: UITableViewCell {
     let scanButton = UIButton(type: .system)
     let barcodeLabel = UILabel()
     
+    weak var delegate: UploadSlipTableViewCellDelegate?
+    
     var scanAction: (() -> Void)?
     
     var isScanned: Bool = false {
@@ -119,7 +121,8 @@ class UploadSlipTableViewCell: UITableViewCell {
     }
     
     @objc private func scanButtonTapped() {
-        scanAction?()
+        // print("Scan button tapped at the cell")
+        delegate?.didTapScanButton(in: self)
     }
     
     // Method to configure the cell with data
@@ -130,4 +133,8 @@ class UploadSlipTableViewCell: UITableViewCell {
 
         setNeedsLayout()
     }
+}
+
+protocol UploadSlipTableViewCellDelegate: AnyObject {
+    func didTapScanButton(in cell: UploadSlipTableViewCell)
 }

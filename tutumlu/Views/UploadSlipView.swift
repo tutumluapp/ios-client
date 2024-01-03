@@ -13,16 +13,23 @@ class UploadSlipView: UIView {
     let tableView = UITableView()
     let uploadButton = RoundedGreenButton()
     
-    let items = UploadData.items
-
-    var isScanned: [Bool] = []
+    private let marketLabel = UILabel()
+    private let dateLabel = UILabel()
+    private let timeLabel = UILabel()
+    
+    weak var delegate: UploadSlipViewDelegate?
+    
+    var viewModel: UploadSlipViewModel? {
+        didSet {
+            configureView()
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        isScanned = Array(repeating: false, count: items.count) // Initialize no item scanned
-
         setupView()
+        configureView()
         setupHeaderStackView()
         setupHeaderBorder()
         setupTableView()
@@ -32,6 +39,13 @@ class UploadSlipView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func configureView() {
+        guard let viewModel = viewModel else { return }
+
+        configureLabels(market: viewModel.marketName ?? "Not found", date: viewModel.date ?? "Not found", time: viewModel.time ?? "Not found")
+        tableView.reloadData()
     }
     
     private func setupView() {
@@ -52,12 +66,8 @@ class UploadSlipView: UIView {
         marketDateStackView.alignment = .fill
         marketDateStackView.spacing = 8
 
-        let marketLabel = UILabel()
-        marketLabel.text = "Market: ŞOK"
         marketLabel.textAlignment = .left
 
-        let dateLabel = UILabel()
-        dateLabel.text = "Date: 17/11/2023"
         dateLabel.textAlignment = .right
         
         let marketLabelContainer = UIView()
@@ -69,8 +79,6 @@ class UploadSlipView: UIView {
         marketDateStackView.addArrangedSubview(marketLabelContainer)
         marketDateStackView.addArrangedSubview(dateLabelContainer)
 
-        let timeLabel = UILabel()
-        timeLabel.text = "Time: 11:58:17"
         timeLabel.textAlignment = .right
         
         headerStackView.addArrangedSubview(marketDateStackView)
@@ -155,7 +163,7 @@ class UploadSlipView: UIView {
 
 extension UploadSlipView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return viewModel?.itemsCount ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -163,19 +171,30 @@ extension UploadSlipView: UITableViewDataSource {
             fatalError("Could not dequeue UploadItemTableViewCell")
         }
         
-        let item = items[indexPath.row]
+        cell.delegate = self
+        
+        guard let item = viewModel?.itemAtIndex(indexPath.row) else {
+            fatalError("Item not found")
+        }
         cell.configure(with: item)
-        cell.isScanned = isScanned[indexPath.row]
+        cell.isScanned = item.barcodeID != nil
         cell.selectionStyle = .none
         
+
+        
+        return cell
+        /*
+        let item = viewModel.itemAtIndex(indexPath.row)
+        cell.configure(with: item)
+
+        // Update isScanned logic to use ViewModel
         cell.scanAction = { [weak self] in
             guard let strongSelf = self else { return }
-            strongSelf.isScanned[indexPath.row] = true
-            
-            tableView.reloadRows(at: [indexPath], with: .automatic)
+            strongSelf.viewModel.markItemAsScanned(at: indexPath.row)
         }
         
         return cell
+         */
     }
 }
 
@@ -191,4 +210,29 @@ extension UploadSlipView {
         guard let cell = cell as? UploadSlipTableViewCell else { return }
         cell.layoutIfNeeded()
     }
+}
+
+extension UploadSlipView {
+    func configureLabels(market: String, date: String, time: String) {
+        marketLabel.text = "Market: \(market)"
+        dateLabel.text = "Date: \(date)"
+        timeLabel.text = "Time: \(time)"
+        // print("Configured \(market)")
+        // print("Configured \(date)")
+        // print("Configured \(time)")
+    }
+}
+
+
+extension UploadSlipView: UploadSlipTableViewCellDelegate {
+    func didTapScanButton(in cell: UploadSlipTableViewCell) {
+        print("Scan button tap delegated to the view")
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        delegate?.didTapScanButton(self, didTapScanButtonForItemAt: indexPath)
+    }
+}
+
+
+protocol UploadSlipViewDelegate: AnyObject {
+    func didTapScanButton(_ view: UploadSlipView, didTapScanButtonForItemAt indexPath: IndexPath)
 }

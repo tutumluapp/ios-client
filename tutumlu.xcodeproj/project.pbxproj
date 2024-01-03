@@ -45,10 +45,11 @@
 		22B26C4B2B4166D600195585 /* UploadSlipTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C4A2B4166D600195585 /* UploadSlipTableViewCell.swift */; };
 		22B26C4D2B416D6C00195585 /* UploadItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C4C2B416D6C00195585 /* UploadItemModel.swift */; };
 		22B26C512B41C5A700195585 /* KeyboardDismissExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C502B41C5A700195585 /* KeyboardDismissExtension.swift */; };
-		22B26C532B42CBBF00195585 /* SlipScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C522B42CBBF00195585 /* SlipScannerViewController.swift */; };
 		22B26C552B433E6400195585 /* SlipDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C542B433E6400195585 /* SlipDataModel.swift */; };
 		22B26C572B44993700195585 /* SlipProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C562B44993700195585 /* SlipProcessor.swift */; };
 		22B26C592B44A70700195585 /* MatchStringsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C582B44A70700195585 /* MatchStringsExtension.swift */; };
+		22B26C5D2B4591CD00195585 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 22B26C5C2B4591CD00195585 /* Supabase */; };
+		22B26C5F2B45A0AA00195585 /* UploadSlipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C5E2B45A0AA00195585 /* UploadSlipViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,10 +93,10 @@
 		22B26C4A2B4166D600195585 /* UploadSlipTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadSlipTableViewCell.swift; sourceTree = "<group>"; };
 		22B26C4C2B416D6C00195585 /* UploadItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadItemModel.swift; sourceTree = "<group>"; };
 		22B26C502B41C5A700195585 /* KeyboardDismissExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDismissExtension.swift; sourceTree = "<group>"; };
-		22B26C522B42CBBF00195585 /* SlipScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlipScannerViewController.swift; sourceTree = "<group>"; };
 		22B26C542B433E6400195585 /* SlipDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlipDataModel.swift; sourceTree = "<group>"; };
 		22B26C562B44993700195585 /* SlipProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlipProcessor.swift; sourceTree = "<group>"; };
 		22B26C582B44A70700195585 /* MatchStringsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchStringsExtension.swift; sourceTree = "<group>"; };
+		22B26C5E2B45A0AA00195585 /* UploadSlipViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadSlipViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22B26C5D2B4591CD00195585 /* Supabase in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +162,7 @@
 		2283171B2B336B2C0079333F /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				22B26C5E2B45A0AA00195585 /* UploadSlipViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -186,7 +189,6 @@
 				22B26C2F2B3C476200195585 /* ChangePasswordViewController.swift */,
 				22B26C312B3F536500195585 /* SearchTabViewController.swift */,
 				22B26C422B40608F00195585 /* BarcodeScannerViewController.swift */,
-				22B26C522B42CBBF00195585 /* SlipScannerViewController.swift */,
 				22B26C332B3F53B700195585 /* SearchNameViewController.swift */,
 				22B26C462B41664200195585 /* UploadSlipViewController.swift */,
 				22B26C352B3F541C00195585 /* SearchBarcodeViewController.swift */,
@@ -247,6 +249,9 @@
 			dependencies = (
 			);
 			name = tutumlu;
+			packageProductDependencies = (
+				22B26C5C2B4591CD00195585 /* Supabase */,
+			);
 			productName = tutumlu;
 			productReference = 228317022B3366030079333F /* tutumlu.app */;
 			productType = "com.apple.product-type.application";
@@ -275,6 +280,9 @@
 				Base,
 			);
 			mainGroup = 228316F92B3366020079333F;
+			packageReferences = (
+				22B26C5B2B4591CD00195585 /* XCRemoteSwiftPackageReference "supabase-swift" */,
+			);
 			productRefGroup = 228317032B3366030079333F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -313,12 +321,12 @@
 				22B26C412B40390800195585 /* TemplateData.swift in Sources */,
 				22B26C2C2B3C3FA700195585 /* ProfileLabelView.swift in Sources */,
 				22B26C3C2B3F719A00195585 /* SearchItemTableViewCell.swift in Sources */,
-				22B26C532B42CBBF00195585 /* SlipScannerViewController.swift in Sources */,
 				22B26C452B407D5F00195585 /* ItemPriceView.swift in Sources */,
 				22B26C4D2B416D6C00195585 /* UploadItemModel.swift in Sources */,
 				22B26C382B3F593C00195585 /* SearchNameView.swift in Sources */,
 				228317212B343CAC0079333F /* LoginSignupView.swift in Sources */,
 				22B26C302B3C476200195585 /* ChangePasswordViewController.swift in Sources */,
+				22B26C5F2B45A0AA00195585 /* UploadSlipViewModel.swift in Sources */,
 				22B26C492B41665D00195585 /* UploadSlipView.swift in Sources */,
 				228317272B3440170079333F /* TitleLabel.swift in Sources */,
 				22B26C2E2B3C475200195585 /* ChangePasswordView.swift in Sources */,
@@ -548,6 +556,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		22B26C5B2B4591CD00195585 /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase-community/supabase-swift.git";
+			requirement = {
+				kind = exactVersion;
+				version = 0.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		22B26C5C2B4591CD00195585 /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 22B26C5B2B4591CD00195585 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 228316FA2B3366020079333F /* Project object */;
 }

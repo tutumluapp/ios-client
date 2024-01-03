@@ -10,6 +10,8 @@ import UIKit
 
 
 class BarcodeScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+    var scanningContext: BarcodeScanningContext = .uploadSlip
+    
     weak var delegate: BarcodeScanViewControllerDelegate?
 
     var captureSession: AVCaptureSession!
@@ -94,9 +96,9 @@ class BarcodeScanViewController: UIViewController, AVCaptureMetadataOutputObject
     }
 
     func found(code: String) {
-        delegate?.barcodeDidScan(code)
+        delegate?.barcodeDidScan(code, context: scanningContext)
         navigationController?.popViewController(animated: true)
-        print(code)
+        // print(code)
     }
 
     override var prefersStatusBarHidden: Bool {
@@ -109,7 +111,12 @@ class BarcodeScanViewController: UIViewController, AVCaptureMetadataOutputObject
 }
 
 protocol BarcodeScanViewControllerDelegate: AnyObject {
-    func barcodeDidScan(_ barcode: String)
+    func barcodeDidScan(_ barcode: String, context: BarcodeScanningContext)
+}
+
+enum BarcodeScanningContext {
+    case uploadSlip
+    case searchItem
 }
 
 
