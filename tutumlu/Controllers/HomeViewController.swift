@@ -102,6 +102,7 @@ extension HomeViewController: UIImagePickerControllerDelegate, UINavigationContr
         let loadingIndicator = showLoadingIndicator()
 
         DispatchQueue.global(qos: .userInitiated).async {
+            let correctedImage = self.correctImageOrientation(image)
             let processedImage = ImagePreProcessor.preprocessImage(image)
             let imageProcessor = SlipParser()
             imageProcessor.performTextRecognition(on: processedImage!) { slipData in
@@ -133,5 +134,18 @@ extension HomeViewController: UIImagePickerControllerDelegate, UINavigationContr
         let viewModel = UploadSlipViewModel(slipData: slipData)
         let uploadVC = UploadSlipViewController(viewModel: viewModel)
         navigationController?.pushViewController(uploadVC, animated: true)
+    }
+    
+    private func correctImageOrientation(_ image: UIImage) -> UIImage {
+        if image.imageOrientation == .up {
+            return image
+        }
+
+        UIGraphicsBeginImageContextWithOptions(image.size, false, image.scale)
+        image.draw(in: CGRect(origin: .zero, size: image.size))
+        let normalizedImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+
+        return normalizedImage
     }
 }
