@@ -5,7 +5,7 @@
 //  Created by ali-kerem on 30.12.2023.
 //
 
-struct SearchItem {
+struct SearchItemModel {
     var name: String
     let priceInfo: [PriceInfo]
 }

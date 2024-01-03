@@ -53,8 +53,15 @@ class ItemPriceView: UIView {
         ])
     }
     
-    func configure(with item: SearchItem) {
+    func configure(with item: SearchItemModel) {
         itemNameLabel.text = item.name
+        
+        let arrangedSubviews = priceStackView.arrangedSubviews
+        for subview in arrangedSubviews {
+            priceStackView.removeArrangedSubview(subview)
+            subview.removeFromSuperview() // Important to remove the view from the view hierarchy
+        }
+
         for priceInfo in item.priceInfo {
             let priceLabel = UILabel()
             priceLabel.translatesAutoresizingMaskIntoConstraints = false

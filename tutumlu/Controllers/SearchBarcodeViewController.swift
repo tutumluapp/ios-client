@@ -12,6 +12,8 @@ import AVFoundation
 class SearchBarcodeViewController: UIViewController {
 
     private var searchBarcodeView: SearchBarcodeView!
+    
+    private let viewModel = SearchBarcodeViewModel()
 
     override func loadView() {
         searchBarcodeView = SearchBarcodeView()
@@ -22,6 +24,10 @@ class SearchBarcodeViewController: UIViewController {
         super.viewDidLoad()
 
         setupBindings()
+        
+        viewModel.onUpdate = { [weak self] item in
+            self?.updateUI(with: item)
+        }
     }
     
     private func setupBindings() {
@@ -31,6 +37,11 @@ class SearchBarcodeViewController: UIViewController {
 
     // MARK: - Actions
     
+    private func updateUI(with item: SearchItemModel) {
+        searchBarcodeView.itemPriceView.configure(with: item)
+        searchBarcodeView.itemPriceView.isHidden = false
+    }
+    
     
     @objc private func backButtonTapped() {
         navigationController?.popViewController(animated: true)
@@ -38,6 +49,9 @@ class SearchBarcodeViewController: UIViewController {
     
     
     @objc private func scanButtonTapped() {
+        // Alternative
+        self.barcodeDidScan("11111", context: .searchItem)
+        /*
         let cameraAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: .video)
 
         switch cameraAuthorizationStatus {
@@ -58,6 +72,7 @@ class SearchBarcodeViewController: UIViewController {
         @unknown default:
             fatalError("Unknown camera authorization status")
         }
+         */
     }
 
     private func navigateToScanVC() {
@@ -90,13 +105,10 @@ class SearchBarcodeViewController: UIViewController {
 extension SearchBarcodeViewController: BarcodeScanViewControllerDelegate {    
     func barcodeDidScan(_ barcode: String, context: BarcodeScanningContext) {
         switch context {
-            case .uploadSlip:
-                return
-            case .searchItem:
-                var item = SearchData.items[1]
-                item.name = barcode
-                searchBarcodeView.itemPriceView.configure(with: item)
-                searchBarcodeView.itemPriceView.isHidden = false
+        case .uploadSlip:
+            return
+        case .searchItem:
+            viewModel.fetchItemDetails(for: barcode)
         }
     }
 }

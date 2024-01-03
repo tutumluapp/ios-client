@@ -76,7 +76,7 @@ class SearchItemTableViewCell: UITableViewCell {
     }
     
     // Method to configure the cell with data
-    func configure(with item: SearchItem) {
+    func configure(with item: SearchItemModel) {
         itemNameLabel.text = item.name
 
 

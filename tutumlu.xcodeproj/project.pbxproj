@@ -50,6 +50,7 @@
 		22B26C592B44A70700195585 /* MatchStringsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C582B44A70700195585 /* MatchStringsExtension.swift */; };
 		22B26C5D2B4591CD00195585 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 22B26C5C2B4591CD00195585 /* Supabase */; };
 		22B26C5F2B45A0AA00195585 /* UploadSlipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C5E2B45A0AA00195585 /* UploadSlipViewModel.swift */; };
+		22B26C632B45DD9000195585 /* SearchBarcodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C622B45DD9000195585 /* SearchBarcodeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +98,7 @@
 		22B26C562B44993700195585 /* SlipProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlipProcessor.swift; sourceTree = "<group>"; };
 		22B26C582B44A70700195585 /* MatchStringsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchStringsExtension.swift; sourceTree = "<group>"; };
 		22B26C5E2B45A0AA00195585 /* UploadSlipViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadSlipViewModel.swift; sourceTree = "<group>"; };
+		22B26C622B45DD9000195585 /* SearchBarcodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarcodeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				22B26C5E2B45A0AA00195585 /* UploadSlipViewModel.swift */,
+				22B26C622B45DD9000195585 /* SearchBarcodeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				22B26C592B44A70700195585 /* MatchStringsExtension.swift in Sources */,
 				2283170A2B3366030079333F /* LoginSignupViewController.swift in Sources */,
 				22B26C512B41C5A700195585 /* KeyboardDismissExtension.swift in Sources */,
+				22B26C632B45DD9000195585 /* SearchBarcodeViewModel.swift in Sources */,
 				22B26C342B3F53B700195585 /* SearchNameViewController.swift in Sources */,
 				22B26C572B44993700195585 /* SlipProcessor.swift in Sources */,
 				228317352B346F310079333F /* HomeView.swift in Sources */,

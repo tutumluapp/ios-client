@@ -2,7 +2,7 @@
 //  MatchStringsExtension.swift
 //  tutumlu
 //
-//  Created by Yapı Kredi Teknoloji A.Ş. on 2.01.2024.
+//  Created by ali-kerem on 2.01.2024.
 //
 
 import Foundation
