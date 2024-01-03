@@ -168,7 +168,7 @@ class SlipParser {
     }
 
     func findDate(in text: String) -> String? {
-        let dateRegex = "([0-2][0-9]|3[0-1])/(0[1-9]|1[0-2])/([0-9]{4})"
+        let dateRegex = "([0-2][0-9]|3[0-1])[./](0[1-9]|1[0-2])[./]([0-9]{4})"
         let matches = text.matchingStrings(regex: dateRegex)
 
         if let firstMatch = matches.first, firstMatch.count > 0 {
@@ -194,7 +194,7 @@ class SlipParser {
 
     func parseItem(from text: String) -> UploadItem? {
         // Updated regex to capture item name and price
-        let itemRegex = "([\\w\\s]+) %\\d{1,2} [*,#]?([0-9]{1,4}[.,][0-9]{2})"
+        let itemRegex = "([\\w\\s.'()]+) %\\d{1,2} [*,#]?([0-9]{1,4}[.,][0-9]{2})"
         let matches = text.matchingStrings(regex: itemRegex)
 
         if let firstMatch = matches.first, firstMatch.count >= 3 {
