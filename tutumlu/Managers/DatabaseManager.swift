@@ -44,4 +44,58 @@ class DatabaseManager {
             throw error  // Propagate the error to the caller
         }
     }
+    
+    func createScan(for scan: SlipDataModel) async throws {
+        let mapping: [String: Int] = ["A101": 1, "ŞOK": 2, "MİGROS": 3]
+        
+        do {
+            let countScans = try await client.database
+              .from("scans")
+              .select(columns: "*", head: true, count: .exact)
+              .execute()
+              .count
+            
+            let countPrices = try await client.database
+              .from("prices")
+              .select(columns: "*", head: true, count: .exact)
+              .execute()
+              .count
+            
+            let scanId = countScans! + 1
+            var priceId = countPrices! + 1
+
+            
+            let scanRequest = ScanRequestModel(id: scanId, created_at: nil, market_id: mapping[scan.marketName ?? "A101"] ?? 1, user_id: nil)
+            
+            try await client.database
+              .from("scans")
+              .insert(values: scanRequest)
+              .execute()
+            
+            
+            var pricesRequest: [PriceRequestModel] = []
+            
+            for priceModel in scan.itemData {
+                pricesRequest.append(PriceRequestModel(
+                    id: priceId,
+                    price: priceModel.price ?? 0,
+                    scan_id: scanId,
+                    product_id: Int(priceModel.barcodeID ?? "0") ?? 0 // Provide a default value in case of failure
+                ))
+                priceId = priceId + 1
+            }
+            
+            print(pricesRequest)
+            
+            try await client.database
+              .from("prices")
+              .insert(values: pricesRequest)
+              .execute()
+            
+            
+        } catch {
+            print("Error executing query for gettin price data for barcode: \(error)")
+            throw error  // Propagate the error to the caller
+        }
+    }
 }

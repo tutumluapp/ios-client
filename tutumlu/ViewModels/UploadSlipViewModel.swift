@@ -49,8 +49,17 @@ class UploadSlipViewModel {
     // Methods to manipulate slipData and other properties
     // Example: Update slip data, fetch additional data, etc.
     
+    func sendSlipData() async {
+        do {
+            try await sendDataToNetwork()
+        } catch {
+            print("Error sending slip data: \(error)")
+        }
+    }
+    
     // In ViewModel
-    func sendDataToNetwork() {
-        // Perform network operations
+    private func sendDataToNetwork() async throws  {
+        let dbManager = DatabaseManager()
+        try await dbManager.createScan(for: slipData)
     }
 }

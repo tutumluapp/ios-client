@@ -155,12 +155,12 @@
 				22B26C252B3C387900195585 /* ChangeProfileNameView.swift */,
 				22B26C212B3C283F00195585 /* ProfileView.swift */,
 				228317302B346DB10079333F /* LoginView.swift */,
-				22B26C482B41665D00195585 /* UploadSlipView.swift */,
 				228317342B346F310079333F /* HomeView.swift */,
 				22B26C2D2B3C475200195585 /* ChangePasswordView.swift */,
 				2283172A2B3442080079333F /* SignupView.swift */,
 				22B26C372B3F593C00195585 /* SearchNameView.swift */,
 				22B26C392B3F597100195585 /* SearchBarcodeView.swift */,
+				22B26C482B41665D00195585 /* UploadSlipView.swift */,
 				228317252B343FF30079333F /* CustomComponents */,
 			);
 			path = Views;
@@ -193,14 +193,14 @@
 				2283172C2B3442380079333F /* SignupViewController.swift */,
 				2283172E2B346D950079333F /* LoginViewController.swift */,
 				22B26C1F2B3C282C00195585 /* ProfileViewController.swift */,
-				228317322B346F1B0079333F /* HomeViewController.swift */,
 				22B26C232B3C386500195585 /* ChangeProfileNameViewController.swift */,
 				22B26C2F2B3C476200195585 /* ChangePasswordViewController.swift */,
 				22B26C312B3F536500195585 /* SearchTabViewController.swift */,
 				22B26C422B40608F00195585 /* BarcodeScannerViewController.swift */,
-				22B26C462B41664200195585 /* UploadSlipViewController.swift */,
 				22B26C332B3F53B700195585 /* SearchNameViewController.swift */,
 				22B26C352B3F541C00195585 /* SearchBarcodeViewController.swift */,
+				228317322B346F1B0079333F /* HomeViewController.swift */,
+				22B26C462B41664200195585 /* UploadSlipViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
