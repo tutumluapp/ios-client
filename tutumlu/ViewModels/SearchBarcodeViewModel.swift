@@ -5,15 +5,20 @@
 //  Created by ali-kerem on 3.01.2024.
 //
 
+import Foundation
+import Supabase
+
+
 class SearchBarcodeViewModel {
     private var searchItem: SearchItemModel?
-    private var currentIndex: Int = 0
-
+    // private var currentIndex: Int = 0
+    
     // Closure for updating the view when data is fetched
     var onUpdate: ((SearchItemModel) -> Void)?
-
-    func fetchItemDetails(for barcode: String) {
-        // Alternative
+    
+    func fetchItemDetails(for barcode: String) async {
+        await networkCall(for: barcode)
+        /*
         if searchItem == nil {
             // If searchItem is not set, set it to the item at currentIndex (0 initially)
             searchItem = SearchData.items[currentIndex]
@@ -29,24 +34,92 @@ class SearchBarcodeViewModel {
             // Update the searchItem to the new currentIndex
             searchItem = SearchData.items[currentIndex]
         }
-
-        // Here you can add your network request logic
-        // For now, just calling the update closure with the current item
-        if let item = searchItem {
-            self.onUpdate?(item)
-        }
-
-        // Uncomment and modify the below network request as per your needs
-        /*
-        APIManager.fetchItemDetails(barcode: barcode) { [weak self] result in
-            switch result {
-            case .success(let item):
+        */
+        DispatchQueue.main.async { [weak self] in
+            if let item = self?.searchItem {
                 self?.onUpdate?(item)
-            case .failure(let error):
-                print(error.localizedDescription)
-                // Handle error case, possibly using another closure or a state variable
             }
         }
-        */
+    }
+    
+    private func networkCall(for barcode: String) async {
+        let client = SupabaseClient(supabaseURL: URL(string: "https://qbpruczdytiwqouzoztl.supabase.co")!, supabaseKey: "Paste your key here")
+        let productData: [ProductData]
+        do {
+            productData = try await client.database
+                .from("prices")
+                .select(columns: "price, scans ( markets ( id, name ) ), products ( name )")
+                .eq(column: "product_id", value: barcode)
+                .execute()
+                .value
+            
+            if searchItem == nil {
+                searchItem = SearchItemModel()  // Ensure searchItem is initialized
+            }
+
+            searchItem?.name = productData[0].products?.name ?? "Not found"
+            searchItem?.priceInfo = [] // Reset or initialize priceInfo
+
+            let extractedData = extractMarketNameAndPrice(from: productData)
+            for data in extractedData {
+                searchItem?.priceInfo.append(PriceInfo(market: data.marketName ?? "Not found", price: data.price ?? 0.0))
+            }
+            // print(extractedData)
+        } catch {
+            print("Error: \(error)")
+            return
+        }
+    }
+    
+    func extractMarketNameAndPrice(from products: [ProductData]) -> [(marketName: String?, price: Double?)] {
+        var result: [(marketName: String?, price: Double?)] = []
+        
+        for product in products {
+            let marketName = product.scans?.markets?.name
+            let price = product.price
+            
+            result.append((marketName, price))
+        }
+        
+        return result
+    }
+}
+
+
+struct ProductData: Codable {
+    let price: Double?
+    let scans: ScanData?
+    let products: Product?
+    
+    enum CodingKeys: String, CodingKey {
+        case price
+        case scans
+        case products
+    }
+    
+    struct ScanData: Codable {
+        let markets: Market?
+        
+        enum CodingKeys: String, CodingKey {
+            case markets
+        }
+    }
+    
+    struct Market: Codable {
+        let id: Int?
+        let name: String?
+        
+        enum CodingKeys: String, CodingKey {
+            case id
+            case name
+        }
+    }
+    
+    struct Product: Codable {
+        let name: String?
+        
+        enum CodingKeys: String, CodingKey {
+            case name
+        }
     }
 }

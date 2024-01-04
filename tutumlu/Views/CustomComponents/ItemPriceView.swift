@@ -65,7 +65,7 @@ class ItemPriceView: UIView {
         for priceInfo in item.priceInfo {
             let priceLabel = UILabel()
             priceLabel.translatesAutoresizingMaskIntoConstraints = false
-            priceLabel.text = "Market: \(priceInfo.market) Price: $\(priceInfo.price)"
+            priceLabel.text = "Market: \(priceInfo.market) Price: \(priceInfo.price)"
             priceStackView.addArrangedSubview(priceLabel)
         }
     }

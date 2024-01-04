@@ -6,8 +6,8 @@
 //
 
 struct SearchItemModel {
-    var name: String
-    let priceInfo: [PriceInfo]
+    var name: String?
+    var priceInfo: [PriceInfo] = []
 }
 
 struct PriceInfo {

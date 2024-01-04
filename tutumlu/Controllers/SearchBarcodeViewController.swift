@@ -26,7 +26,9 @@ class SearchBarcodeViewController: UIViewController {
         setupBindings()
         
         viewModel.onUpdate = { [weak self] item in
-            self?.updateUI(with: item)
+            DispatchQueue.main.async {
+                self?.updateUI(with: item)
+            }
         }
     }
     
@@ -50,7 +52,7 @@ class SearchBarcodeViewController: UIViewController {
     
     @objc private func scanButtonTapped() {
         // Alternative
-        self.barcodeDidScan("11111", context: .searchItem)
+        self.barcodeDidScan("8690637939891", context: .searchItem)
         /*
         let cameraAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: .video)
 
@@ -108,7 +110,9 @@ extension SearchBarcodeViewController: BarcodeScanViewControllerDelegate {
         case .uploadSlip:
             return
         case .searchItem:
-            viewModel.fetchItemDetails(for: barcode)
+            Task {
+                await viewModel.fetchItemDetails(for: barcode)
+            }
         }
     }
 }
