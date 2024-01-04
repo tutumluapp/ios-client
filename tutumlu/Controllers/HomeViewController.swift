@@ -103,7 +103,7 @@ extension HomeViewController: UIImagePickerControllerDelegate, UINavigationContr
 
         DispatchQueue.global(qos: .userInitiated).async {
             let correctedImage = self.correctImageOrientation(image)
-            let processedImage = ImagePreProcessor.preprocessImage(image)
+            let processedImage = ImagePreProcessor.preprocessImage(correctedImage)
             let imageProcessor = SlipParser()
             imageProcessor.performTextRecognition(on: processedImage!) { slipData in
                 DispatchQueue.main.async {
