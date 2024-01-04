@@ -12,7 +12,7 @@ class SearchNameView: UIView {
     let tableView = UITableView()
     let searchBar = UISearchBar()
     
-    let items = SearchData.items
+    var items = [SearchItemModel]()
 
     var isExpanded: [Bool] = []
     
@@ -44,6 +44,9 @@ class SearchNameView: UIView {
         tableView.delegate = self
         tableView.register(SearchItemTableViewCell.self, forCellReuseIdentifier: "SearchItemTableViewCell")
         
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 100
+        
         addSubview(tableView)
     }
     
@@ -63,6 +66,13 @@ class SearchNameView: UIView {
             tableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
         ])
     }
+    
+    func updateItems(_ newItems: [SearchItemModel]) {
+        items = newItems
+        isExpanded = Array(repeating: false, count: newItems.count)
+        tableView.reloadData()
+    }
+
 }
 
 
@@ -77,8 +87,9 @@ extension SearchNameView: UITableViewDataSource {
         }
         
         let item = items[indexPath.row]
-        cell.configure(with: item)
+        
         cell.isExpanded = isExpanded[indexPath.row]
+        cell.configure(with: item)
         cell.selectionStyle = .none
         
         // Add a closure or delegate to handle expansion
@@ -86,9 +97,7 @@ extension SearchNameView: UITableViewDataSource {
             guard let strongSelf = self else { return }
             strongSelf.isExpanded[indexPath.row] = !strongSelf.isExpanded[indexPath.row]
             
-            tableView.beginUpdates()
             tableView.reloadRows(at: [indexPath], with: .automatic)
-            tableView.endUpdates()
         }
         
         return cell
@@ -101,12 +110,5 @@ extension SearchNameView: UITableViewDelegate {
         let item = items[indexPath.row]
         let priceCount = item.priceInfo.count
         return CGFloat(isExpanded[indexPath.row] ? 100 + 20 * priceCount  : 100)
-    }
-}
-
-extension SearchNameView {
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        guard let cell = cell as? SearchItemTableViewCell else { return }
-        cell.layoutIfNeeded()
     }
 }

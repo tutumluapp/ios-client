@@ -51,6 +51,8 @@
 		22B26C5D2B4591CD00195585 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 22B26C5C2B4591CD00195585 /* Supabase */; };
 		22B26C5F2B45A0AA00195585 /* UploadSlipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C5E2B45A0AA00195585 /* UploadSlipViewModel.swift */; };
 		22B26C632B45DD9000195585 /* SearchBarcodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B26C622B45DD9000195585 /* SearchBarcodeViewModel.swift */; };
+		22FFC9A32B47F0E2002FB81E /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FFC9A22B47F0E2002FB81E /* DatabaseManager.swift */; };
+		22FFC9A52B48060D002FB81E /* SearchNameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FFC9A42B48060D002FB81E /* SearchNameViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +101,8 @@
 		22B26C582B44A70700195585 /* MatchStringsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchStringsExtension.swift; sourceTree = "<group>"; };
 		22B26C5E2B45A0AA00195585 /* UploadSlipViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadSlipViewModel.swift; sourceTree = "<group>"; };
 		22B26C622B45DD9000195585 /* SearchBarcodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarcodeViewModel.swift; sourceTree = "<group>"; };
+		22FFC9A22B47F0E2002FB81E /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		22FFC9A42B48060D002FB81E /* SearchNameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNameViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +136,7 @@
 		228317042B3366030079333F /* tutumlu */ = {
 			isa = PBXGroup;
 			children = (
+				22FFC9A12B47F0C4002FB81E /* Managers */,
 				228317222B343EDD0079333F /* Extensions */,
 				2283171F2B336B4E0079333F /* Other */,
 				2283171E2B336B480079333F /* Controllers */,
@@ -147,10 +152,10 @@
 			isa = PBXGroup;
 			children = (
 				228317202B343CAC0079333F /* LoginSignupView.swift */,
+				22B26C252B3C387900195585 /* ChangeProfileNameView.swift */,
 				22B26C212B3C283F00195585 /* ProfileView.swift */,
 				228317302B346DB10079333F /* LoginView.swift */,
 				22B26C482B41665D00195585 /* UploadSlipView.swift */,
-				22B26C252B3C387900195585 /* ChangeProfileNameView.swift */,
 				228317342B346F310079333F /* HomeView.swift */,
 				22B26C2D2B3C475200195585 /* ChangePasswordView.swift */,
 				2283172A2B3442080079333F /* SignupView.swift */,
@@ -166,6 +171,7 @@
 			children = (
 				22B26C5E2B45A0AA00195585 /* UploadSlipViewModel.swift */,
 				22B26C622B45DD9000195585 /* SearchBarcodeViewModel.swift */,
+				22FFC9A42B48060D002FB81E /* SearchNameViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -192,8 +198,8 @@
 				22B26C2F2B3C476200195585 /* ChangePasswordViewController.swift */,
 				22B26C312B3F536500195585 /* SearchTabViewController.swift */,
 				22B26C422B40608F00195585 /* BarcodeScannerViewController.swift */,
-				22B26C332B3F53B700195585 /* SearchNameViewController.swift */,
 				22B26C462B41664200195585 /* UploadSlipViewController.swift */,
+				22B26C332B3F53B700195585 /* SearchNameViewController.swift */,
 				22B26C352B3F541C00195585 /* SearchBarcodeViewController.swift */,
 			);
 			path = Controllers;
@@ -234,6 +240,14 @@
 				22B26C2B2B3C3FA700195585 /* ProfileLabelView.swift */,
 			);
 			path = CustomComponents;
+			sourceTree = "<group>";
+		};
+		22FFC9A12B47F0C4002FB81E /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				22FFC9A22B47F0E2002FB81E /* DatabaseManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,6 +346,7 @@
 				22B26C302B3C476200195585 /* ChangePasswordViewController.swift in Sources */,
 				22B26C5F2B45A0AA00195585 /* UploadSlipViewModel.swift in Sources */,
 				22B26C492B41665D00195585 /* UploadSlipView.swift in Sources */,
+				22FFC9A32B47F0E2002FB81E /* DatabaseManager.swift in Sources */,
 				228317272B3440170079333F /* TitleLabel.swift in Sources */,
 				22B26C2E2B3C475200195585 /* ChangePasswordView.swift in Sources */,
 				2283172B2B3442080079333F /* SignupView.swift in Sources */,
@@ -349,6 +364,7 @@
 				228317312B346DB10079333F /* LoginView.swift in Sources */,
 				2283172F2B346D950079333F /* LoginViewController.swift in Sources */,
 				228317292B3440FF0079333F /* RoundedGreenButton.swift in Sources */,
+				22FFC9A52B48060D002FB81E /* SearchNameViewModel.swift in Sources */,
 				22B26C242B3C386500195585 /* ChangeProfileNameViewController.swift in Sources */,
 				22B26C202B3C282C00195585 /* ProfileViewController.swift in Sources */,
 				228317332B346F1B0079333F /* HomeViewController.swift in Sources */,

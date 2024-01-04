@@ -21,7 +21,6 @@ class SearchItemTableViewCell: UITableViewCell {
             let image = isExpanded ? UIImage(systemName: "chevron.up") : UIImage(systemName: "chevron.down")
             toggleButton.setImage(image, for: .normal)
             priceStackView.isHidden = !isExpanded
-            setupConstraints()
         }
     }
     
@@ -37,7 +36,7 @@ class SearchItemTableViewCell: UITableViewCell {
     }
     
     private func setupViews() {
-        itemNameLabel.text = "Item's Name"
+        itemNameLabel.numberOfLines = 1
         
         toggleButton.setTitle("See prices...", for: .normal)
         toggleButton.setImage(UIImage(systemName: "chevron.down"), for: .normal)
@@ -59,6 +58,7 @@ class SearchItemTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate([
             itemNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
             itemNameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            itemNameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             
             toggleButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16),
             toggleButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
@@ -79,23 +79,18 @@ class SearchItemTableViewCell: UITableViewCell {
     func configure(with item: SearchItemModel) {
         itemNameLabel.text = item.name
 
-
         for priceInfo in item.priceInfo {
             let priceLabel = UILabel()
             priceLabel.translatesAutoresizingMaskIntoConstraints = false
-            priceLabel.text = "Market: \(priceInfo.market) Price: $\(priceInfo.price)"
+            priceLabel.text = "\(priceInfo.market) - \(priceInfo.price!)₺ "
             priceStackView.addArrangedSubview(priceLabel)
         }
-        
-        priceStackView.isHidden = !isExpanded
-        
-        setNeedsLayout()
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
         // Reset cell to default state
-        itemNameLabel.text = nil
+        itemNameLabel.text = "***************************"
         priceStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
         isExpanded = false
     }

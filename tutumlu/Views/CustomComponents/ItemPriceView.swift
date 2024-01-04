@@ -23,7 +23,8 @@ class ItemPriceView: UIView {
     }
 
     private func setupViews() {
-        itemNameLabel.text = "Item's Name"
+        itemNameLabel.numberOfLines = 0
+        itemNameLabel.lineBreakMode = .byWordWrapping
 
         priceStackView.axis = .vertical
 
@@ -65,7 +66,7 @@ class ItemPriceView: UIView {
         for priceInfo in item.priceInfo {
             let priceLabel = UILabel()
             priceLabel.translatesAutoresizingMaskIntoConstraints = false
-            priceLabel.text = "Market: \(priceInfo.market) Price: \(priceInfo.price)"
+            priceLabel.text = "Market: \(priceInfo.market) Price: \(priceInfo.price!)"
             priceStackView.addArrangedSubview(priceLabel)
         }
     }
