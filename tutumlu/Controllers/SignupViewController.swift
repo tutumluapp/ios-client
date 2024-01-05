@@ -10,6 +10,8 @@ import UIKit
 class SignupViewController: UIViewController {
     
     private var signupView: SignupView!
+    
+    private var viewModel = SignupViewModel()
 
     override func loadView() {
         signupView = SignupView()
@@ -33,11 +35,33 @@ class SignupViewController: UIViewController {
     }
     
     @objc private func signupButtonTapped() {
-        let homeVC = HomeViewController()
-        navigationController?.setViewControllers([homeVC], animated: true)
+        guard passwordsMatch() else {
+            presentPasswordMismatchAlert()
+            return
+        }
+        Task {
+            await viewModel.signup(username: signupView.usernameTextField.text ?? "",
+                                   profileName: signupView.profileNameTextField.text ?? "",
+                                   email: signupView.emailTextField.text ?? "",
+                                   password: signupView.passwordTextField.text ?? "")
+        }
+        let loginVC = LoginViewController()
+        navigationController?.setViewControllers([loginVC], animated: true)
+
+        
     }
     
     @objc private func backButtonTapped() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    private func passwordsMatch() -> Bool {
+        return signupView.passwordTextField.text == signupView.repeatPasswordTextField.text
+    }
+    
+    private func presentPasswordMismatchAlert() {
+        let alert = UIAlertController(title: "Password Mismatch", message: "Please ensure the passwords match.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        self.present(alert, animated: true)
     }
 }

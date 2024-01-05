@@ -226,7 +226,7 @@ extension UploadSlipView {
 
 extension UploadSlipView: UploadSlipTableViewCellDelegate {
     func didTapScanButton(in cell: UploadSlipTableViewCell) {
-        print("Scan button tap delegated to the view")
+        // print("Scan button tap delegated to the view")
         guard let indexPath = tableView.indexPath(for: cell) else { return }
         delegate?.didTapScanButton(self, didTapScanButtonForItemAt: indexPath)
     }

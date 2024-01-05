@@ -16,8 +16,8 @@ class SearchNameViewModel {
     func fetchItems(for subString: String) async {
         do {
             let products = try await networkCall(for: subString)
-            print(subString)
-            print(products)
+            // print(subString)
+            // print(products)
             if let itemModels = convertToSearchItemModels(products) {
                 DispatchQueue.main.async { [weak self] in
                     self?.searchItems = itemModels

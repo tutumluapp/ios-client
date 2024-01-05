@@ -16,7 +16,7 @@ class SearchBarcodeViewModel {
     func fetchItemDetails(for barcode: String) async {
         do {
             let products = try await networkCall(for: barcode)
-            print(products)
+            // print(products)
             if let itemModel = extractMarketNameAndPrice(from: products) {
                 DispatchQueue.main.async { [weak self] in
                     self?.searchItem = itemModel

@@ -10,12 +10,13 @@ import UIKit
 class LoginViewController: UIViewController {
     
     private var loginView: LoginView!
+    
+    private var viewModel = LoginViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
 
-        // Initialize your custom view and add it as a subview
         loginView = LoginView()
         view.addSubview(loginView)
         
@@ -36,9 +37,28 @@ class LoginViewController: UIViewController {
     }
     
     @objc private func loginButtonTapped() {
-        let homeVC = HomeViewController()
-        navigationController?.setViewControllers([homeVC], animated: true)
+        Task {
+            let isSuccess = await viewModel.login(email: loginView.emailTextField.text ?? "",
+                                                  password: loginView.passwordTextField.text ?? "")
+            if isSuccess {
+                DispatchQueue.main.async {
+                    let homeVC = HomeViewController()
+                    self.navigationController?.setViewControllers([homeVC], animated: true)
+                }
+            } else {
+                DispatchQueue.main.async {
+                    self.presentLoginFailureAlert()
+                }
+            }
+        }
     }
+    
+    private func presentLoginFailureAlert() {
+        let alert = UIAlertController(title: "Login Failed", message: "Invalid credentials. Please try again.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
+    }
+
 
     @objc private func backButtonTapped() {
         navigationController?.popViewController(animated: true)

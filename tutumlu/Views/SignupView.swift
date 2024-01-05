@@ -11,6 +11,7 @@ class SignupView: UIView {
     
     let titleLabel = TitleLabel()
     let stackView = UIStackView()
+    let emailTextField = UITextField()
     let profileNameTextField = UITextField()
     let usernameTextField = UITextField()
     let passwordTextField = UITextField()
@@ -30,7 +31,11 @@ class SignupView: UIView {
         backgroundColor = .white
         
         // Profile name
-        profileNameTextField.placeholder = "Enter username..."
+        emailTextField.placeholder = "Enter email..."
+        emailTextField.borderStyle = .roundedRect
+        
+        // Profile name
+        profileNameTextField.placeholder = "Enter profile name..."
         profileNameTextField.borderStyle = .roundedRect
 
         // Configure and add the username text field
@@ -52,6 +57,7 @@ class SignupView: UIView {
         stackView.distribution = .fillEqually
         stackView.spacing = 40
         
+        stackView.addArrangedSubview(emailTextField)
         stackView.addArrangedSubview(profileNameTextField)
         stackView.addArrangedSubview(usernameTextField)
         stackView.addArrangedSubview(passwordTextField)
@@ -80,13 +86,14 @@ class SignupView: UIView {
             
             // Stack view constraints
             stackView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            stackView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            stackView.bottomAnchor.constraint(equalTo: signupButton.topAnchor, constant: -50),
             stackView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.8),
+            emailTextField.heightAnchor.constraint(equalToConstant: 50),
             usernameTextField.heightAnchor.constraint(equalToConstant: 50),
             passwordTextField.heightAnchor.constraint(equalToConstant: 50),
             
             // Signup button constraints
-            signupButton.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 50),
+            signupButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -100),
             signupButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             signupButton.heightAnchor.constraint(equalToConstant: 50),
             signupButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.8)

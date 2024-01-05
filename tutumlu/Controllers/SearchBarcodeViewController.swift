@@ -52,8 +52,8 @@ class SearchBarcodeViewController: UIViewController {
     
     @objc private func scanButtonTapped() {
         // Alternative
-        self.barcodeDidScan("8690637939891", context: .searchItem)
-        /*
+        // self.barcodeDidScan("8690637939891", context: .searchItem)
+        
         let cameraAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: .video)
 
         switch cameraAuthorizationStatus {
@@ -74,7 +74,7 @@ class SearchBarcodeViewController: UIViewController {
         @unknown default:
             fatalError("Unknown camera authorization status")
         }
-         */
+        
     }
 
     private func navigateToScanVC() {

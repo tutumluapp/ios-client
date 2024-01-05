@@ -11,7 +11,7 @@ class LoginView: UIView {
     
     let titleLabel = TitleLabel()
     let stackView = UIStackView()
-    let usernameTextField = UITextField()
+    let emailTextField = UITextField()
     let passwordTextField = UITextField()
     let loginButton = RoundedGreenButton()
 
@@ -29,8 +29,8 @@ class LoginView: UIView {
         backgroundColor = .white
 
         // Configure and add the username text field
-        usernameTextField.placeholder = "Enter username..."
-        usernameTextField.borderStyle = .roundedRect
+        emailTextField.placeholder = "Enter email..."
+        emailTextField.borderStyle = .roundedRect
 
         // Configure and add the password text field
         passwordTextField.placeholder = "Enter password..."
@@ -42,7 +42,7 @@ class LoginView: UIView {
         stackView.distribution = .fillEqually
         stackView.spacing = 40
         
-        stackView.addArrangedSubview(usernameTextField)
+        stackView.addArrangedSubview(emailTextField)
         stackView.addArrangedSubview(passwordTextField)
 
         // Configure and add the login button
@@ -68,7 +68,7 @@ class LoginView: UIView {
             stackView.centerXAnchor.constraint(equalTo: centerXAnchor),
             stackView.centerYAnchor.constraint(equalTo: centerYAnchor),
             stackView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.8),
-            usernameTextField.heightAnchor.constraint(equalToConstant: 50),
+            emailTextField.heightAnchor.constraint(equalToConstant: 50),
             passwordTextField.heightAnchor.constraint(equalToConstant: 50),
             
             // Login button constraints

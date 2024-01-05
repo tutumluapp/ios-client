@@ -76,13 +76,13 @@ class UploadSlipViewController: UIViewController {
     
     private func navigateToScanVC() {
         // Alternative
-        /*
+        
         let scanVC = BarcodeScanViewController()
         scanVC.scanningContext = .uploadSlip
         scanVC.delegate = self
         navigationController?.pushViewController(scanVC, animated: true)
-        */
-        barcodeDidScan("80817222", context: .uploadSlip)
+        
+        // barcodeDidScan("80817222", context: .uploadSlip)
     }
     
     

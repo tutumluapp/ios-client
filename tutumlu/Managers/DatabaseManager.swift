@@ -23,7 +23,7 @@ class DatabaseManager {
                 .value
             return productData
         } catch {
-            print("Error executing query for gettin price data for barcode: \(error)")
+            print("Error executing query for getting price data for barcode: \(error)")
             throw error  // Propagate the error to the caller
         }
     }
@@ -37,10 +37,10 @@ class DatabaseManager {
                 .ilike(column: "name", value: "%\(substring)%")
                 .execute()
                 .value
-            print(products)
+            // print(products)
             return products
         } catch {
-            print("Error executing query for gettin price data for barcode: \(error)")
+            print("Error executing query for getting price data for name: \(error)")
             throw error  // Propagate the error to the caller
         }
     }
@@ -85,7 +85,7 @@ class DatabaseManager {
                 priceId = priceId + 1
             }
             
-            print(pricesRequest)
+            // print(pricesRequest)
             
             try await client.database
               .from("prices")
@@ -94,7 +94,7 @@ class DatabaseManager {
             
             
         } catch {
-            print("Error executing query for gettin price data for barcode: \(error)")
+            print("Error executing query sending scan info: \(error)")
             throw error  // Propagate the error to the caller
         }
     }
